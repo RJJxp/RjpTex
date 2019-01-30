@@ -1,0 +1,41 @@
+\documentclass[a4paper, UTF8]{article}
+\usepackage{natbib}
+\citestyle{nature}
+\begin{document}
+
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\title{Chapter 03 Learning}
+\author{rjp}
+\date{2019-01-17}
+\maketitle
+
+\section{section 01}
+Here is section 01.
+
+\section{section 02}
+Here is section 02.
+
+\section{section 03}
+
+Here is section 03.
+
+fsladjflsafdsjlf
+% It is hard to write unstructured and disorganised documents using \LaTeX \cite{les85}.It is interesting to typeset one equation˜\cite[Sec 3.3]{les85} rather than setting ten pages of running matter˜\cite{don89, rondon89}.
+% \begin{thebibliography}{9}
+%     \bibitem{les85}Leslie Lamport, 1985. \emph{\LaTeX---A Document Preparation System---User’s Guide and Reference Manual}, Addision-Wesley, Reading.
+%     \bibitem{don89}Donald E. Knuth, 1989. \emph{Typesetting Concrete Mathematics}, TUGBoat, 10(1):31-36.
+%     \bibitem{rondon89}Ronald L. Graham, Donald E. Knuth, and Ore Patashnik, 1989. \emph{Concrete Mathematics: A Foundation for Computer Science}, Addison-Wesley, Reading.
+% \end{thebibliography}
+
+fsadf \citet*{les(85)} fsaljfsif
+
+
+\begin{thebibliography}{9}
+    \bibitem{les(85)}{les85}Leslie Lamport, 1985. \emph{\LaTeX---A Document Preparation System---User’s Guide and Reference Manual}, Addision-Wesley, Reading.
+    \bibitem{don(89)}{don89}Donald E. Knuth, 1989. \emph{Typesetting Concrete Mathematics}, TUGBoat, 10(1):31-36.
+    \bibitem{rondon(89)}{rondon89}Ronald L. Graham, Donald E. Knuth, and Ore Patashnik, 1989. \emph{Concrete Mathematics: A Foundation for Computer Science}, Addison-Wesley, Reading.
+\end{thebibliography}
+
+\end{document}

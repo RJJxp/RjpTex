@@ -1,0 +1,45 @@
+\documentclass[a4paper, UTF8]{article}
+\usepackage{graphicx}
+
+\graphicspath{{./pic/}}
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\title{Chapter 05 Learning}
+\author{
+    rjp \\[0.5cm]
+    in TJ University Jiading Campus
+}
+\date{2019-01-18}
+\maketitle
+
+\tableofcontents
+\addtocontents{toc}{\protect\vspace{2ex}}
+\listoffigures
+\addtocontents{lof}{\protect\vspace{3ex}}
+\addcontentsline{lof}{figure}{\protect\numberline{\thefigure}test for rjp}
+
+\section{first}
+\subsection{first-1}
+\subsection{first-2}
+\newpage
+
+\section{second}
+\subsection{second-1}
+\subsection{second-2}
+\newpage
+
+\section{third}
+\subsection{third-1}
+\begin{figure}[htbp]
+    \caption{test picture}
+    \includegraphics[scale=0.3]{01.jpg}
+\end{figure}
+\subsection{third-2}
+\newpage
+
+
+
+\end{document}

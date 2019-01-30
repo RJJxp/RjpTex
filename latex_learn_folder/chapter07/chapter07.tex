@@ -1,0 +1,441 @@
+\documentclass[a4paper, UTF8]{article}
+\usepackage{longtable}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{multirow}
+
+\begin{document}
+\title{chapter07 \LaTeX\ Learning}
+\author{rjp}
+\date{2019-01-20}
+\maketitle
+
+\pagestyle{headings}
+\thispagestyle{empty}
+\begin{abstract}
+    GO! GO! GO!
+
+    keep running
+
+    this is just what i have expected. all the content after chapter 4 is becoming easizer.
+
+    SO GO!!!!!!
+\end{abstract}
+\newpage
+
+Let's take stock of what we have learnt
+\begin{tabbing}
+    \hspace{1cm}\= \textbf{AbiWord}\quad\=A Word Processer\\[5pt]
+                \> \textbf{Emacs} \>A text Editor\\[5pt]
+                \> \textbf{\TeX} \> A typesetting program 
+\end{tabbing}
+
+Let's take stock of what we have learnt
+\begin{tabbing}
+    \textbf{AbiWord}\quad\=A Word Processer\\[5pt]
+    \textbf{Emacs}\quad\>A text Editor\\[5pt]
+    \textbf{\TeX}\quad\> A typesetting program 
+\end{tabbing}
+
+% the problem one
+Let's take stock of what we have learnt
+\begin{tabbing} 
+    \textbf{\TeX}\quad\= A typesetting program\\[5pt]
+    \textbf{Emacs}\quad\>A text Editor\\[5pt]
+    \textbf{AbiWord}\quad\>A Word Processer
+\end{tabbing}
+
+% solved one
+Let's take stock of what we have learnt
+\begin{tabbing} 
+	\textbf{AbiWord}\quad\=A Word Processor\kill
+    \textbf{\TeX}\quad\> A typesetting program\\[5pt]
+    \textbf{Emacs}\quad\>A text Editor\\[5pt]
+    \textbf{AbiWord}\quad\>A Word Processer
+\end{tabbing}
+
+\begin{tabbing} 
+    \textbf{AbiWord}\quad\= : \= A word processor\kill\\ 
+    \textbf{\TeX}\quad   \> : \> A typesetting program\\[5pt] 
+    \textbf{Emacs}\quad  \> : \> A text editor\\[5pt] 
+                        \>   \> \quad\= a programming environment\\[5pt] 
+                        \>   \> \> a mail reader\\[5pt] 
+                        \>   \> \> and a lot more besides\\[5pt]
+    \textbf{AbiWord}\quad\> : \> A word processor 
+\end{tabbing}
+
+
+\begin{tabbing}
+    sssssssssssss\=: \=ssssssss\kill\\[5pt]
+    Program\> :\>\TeX\\[5pt]
+    Author\>:\>Donald Knuth\\[5pt]
+    Manuals\>:\\
+    \quad\= ssssssssssssssssssssssssssssssssssssss\quad\=sssssssssssssssssssssss\=ssssssssssssssss\kill\\
+        \>\textsf{title}\>\textsf{author}\>\textsf{publisher}\\[8pt]
+        \>The \TeX Book\>Donald Knuth\>publisher01\\[5pt]
+        \>The Advanced \TeX\ Book\>David Salomon\>publisher02
+    
+\end{tabbing}
+\newpage
+
+\begin{tabbing}
+    sssssssssssssssss\=: \=ssssssss\kill\\[5pt]
+    Program\>:\>\TeX\\[5pt]
+    Author\>:\>Donald Knuth\\[5pt]
+    Manuals\>:\\
+    \pushtabs
+    \quad\= ssssssssssssssssssssssssssssssssssssss\=sssssssssssssssssssssss\=ssssssssssssssss\kill\\
+        \>\textsf{title}\>\textsf{author}\>\textsf{publisher}\\[8pt]
+        \>The \TeX Book\>Donald Knuth\>publisher01\\[5pt]
+        \>The Advanced \TeX\ Book\>David Salomon\>publisher02\\[16pt]
+    \poptabs
+    url\>:\>www.TeX.com
+\end{tabbing}
+\newpage
+
+The table below shows the sizes of the planets of our solar system.
+\begin{center}
+    \begin{tabular}{lr}
+        Planet  &   Diameter(km)\\[5pt]
+        Mercury &   4878\\
+        Venus   &   12104\\
+        Earth   &   6794\\
+        Jupiter &   142984\\
+        Saturn  &   120536\\
+        Uranus  &   51118\\
+        Neptune &   49532\\
+        Pluto   &   2274
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{|l|r|}
+        \hline
+        Planet  &   Diameter(km)\\[5pt]
+        \hline        
+        Mercury &   4878\\
+        \hline
+        Venus   &   12104\\
+        \hline
+        Earth   &   6794\\
+        \hline
+        Jupiter &   142984\\
+        \hline
+        Saturn  &   120536\\
+        \hline
+        Uranus  &   51118\\
+        \hline
+        Neptune &   49532\\
+        \hline
+        Pluto   &   2274\\
+        \hline
+    \end{tabular}
+\end{center}
+
+As can be seen, Pluto is the smallest and Jupiter the largest.
+
+% p{.8\linewidth}
+\begin{center}
+    \begin{tabular}{lp{.8\linewidth}}
+        Planet  &   Features\\[8pt]
+        Mercury &   Lunar like crust, crustal faulting, small magnetic fields.\\
+        Venus   &   Shrouded in clouds, undulating surface with highlands, plains, lowlands and craters.\\
+        Earth   &   Ocens of water filling lowlands between continents, unique in supporting life, magnetic field.\\
+        Mars    &   Cratered uplands, lowland plains, volcanic regions.\\
+        Jupiter &   Covered by clouds, dark ring of dust, magnetic field.\\ 
+        Saturn  &   Several cloud layers, magnetic field, thousands of rings.\\
+        Uranus  &   Layers of cloud and mist, magentic field, some rings.\\ 
+        Neptune &   Unable to detect from earth.\\ 
+        Pluto   &   Unable to detect from earth.
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{lp{6cm}}
+        Planet  &   Features\tabularnewline[8pt]
+        Mercury &   \raggedright
+                    Lunar like crust\\
+                    crustal faulting\\
+                    small magnetic fields.
+                    \tabularnewline[3pt]
+        Venus   &   \raggedright
+                    Shrouded in clouds\\        
+                    undulating surface with highlands, plains, lowlands and craters.
+                    \tabularnewline[3pt]
+        Earth   &   \raggedright
+                    Ocens of water filling lowlands between continents\\
+                    unique in supporting life, magnetic field.
+                    \tabularnewline[3pt]
+        Mars    &   \raggedright
+                    Cratered uplands\\
+                    lowland plains\\ 
+                    volcanic regions.
+                    \tabularnewline[3pt]
+        Jupiter &   \raggedright
+                    Covered by clouds\\
+                    dark ring of dust\\
+                    magnetic field.
+                    \tabularnewline[3pt]
+        Saturn  &   \raggedright
+                    Several cloud layers\\
+                    magnetic field\\
+                    thousands of rings.
+                    \tabularnewline[3pt]
+        Uranus  &   \raggedright
+                    Layers of cloud and mist\\
+                    magentic field\\
+                    some rings.
+                    \tabularnewline[3pt] 
+        Neptune &   Unable to detect from earth.\tabularnewline[3pt]
+        Pluto   &   Unable to detect from earth.
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{l r r}
+        Planet &\multicolumn{2}{c}{Distance from sun (km)}\\
+                & Maximum    & Minimum\\
+        Mercury & 69400000   & 46800000\\
+        Venus & 109000000 & 107600000\\ 
+        Earth & 152600000 & 147400000\\ 
+        Mars & 249200000 & 207300000\\ 
+        Jupiter & 817400000 & 741600000\\ Saturn & 1512000000 & 1346000000\\ Uranus & 3011000000 & 2740000000\\ 
+    \end{tabular}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|l|r|r|}
+        \hline
+        \multicolumn{1}{|m{1.5cm}|}{\centering Planet} & \multicolumn{2}{c|}{Distance from sun (km)}\\
+        \cline{2-3}
+                & Maximum    & Minimum\\
+        \hline
+        Mercury & 69400000   & 46800000\\ 
+        \hline
+        Venus & 109000000 & 107600000\\ 
+        \hline
+        Earth & 152600000 & 147400000\\ 
+        \hline
+        Mars & 249200000 & 207300000\\ 
+        \hline
+        Jupiter & 817400000 & 741600000\\ 
+        \hline
+        Saturn & 1512000000 & 1346000000\\
+        \hline
+        Uranus & 3011000000 & 2740000000\\ 
+        \hline 
+    \end{tabular}
+\end{center}
+
+use command \textbackslash multicolumn to reset the pos of the tabular
+
+\begin{center}
+    \begin{tabular}{|l|r|r|}
+        \hline
+        Planet & \multicolumn{2}{c|}{Distance from sun (km)}\\
+        \cline{2-3}
+                & \multicolumn{1}{c|}{Maximum}  & \multicolumn{1}{c|}{Minimum}\\
+        \hline
+        Mercury & 69400000   & 46800000\\ 
+        \hline
+        Venus & 109000000 & 107600000\\ 
+        \hline
+        Earth & 152600000 & 147400000\\ 
+        \hline
+        Mars & 249200000 & 207300000\\ 
+        \hline
+        Jupiter & 817400000 & 741600000\\ 
+        \hline
+        Saturn & 1512000000 & 1346000000\\
+        \hline
+        Uranus & 3011000000 & 2740000000\\ 
+        \hline 
+    \end{tabular}
+\end{center}
+
+
+
+\begin{center}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Planet & \multicolumn{2}{p{4cm}|}{\centering Distance from sun\\ (million km)}\tabularnewline   % or \\
+        \cline{2-3}
+                & \multicolumn{1}{c|}{Maximum}  & \multicolumn{1}{c|}{Minimum}\\
+        \hline
+        Mercury & 69.40   & 46.80\\ 
+        \hline
+        Venus & 109.00 & 107.60\\ 
+        \hline
+        Earth & 152.60 & 147.40\\ 
+        \hline
+        Mars & 249.20 & 207.30\\ 
+        \hline
+        Jupiter & 817.40 & 741.60\\ 
+        \hline
+        Saturn & 1512.00 & 1346.00\\
+        \hline
+        Uranus & 3011.00 & 2740.00\\ 
+        \hline 
+    \end{tabular}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Planet & \multicolumn{2}{p{4cm}|}{\centering Distance from sun\\ (million km)}\tabularnewline   % or \\
+        \cline{2-3}
+                & \multicolumn{1}{c|}{Maximum}  & \multicolumn{1}{c|}{Minimum}\\
+        \hline
+        Mercury & 69.40   & 46.80\\ 
+        \hline
+        Venus & 109.00 & 107.60\\ 
+        \hline
+        Earth & 152.60 & 147.40\\ 
+        \hline
+        Mars & 249.20 & 207.30\\ 
+        \hline
+        Jupiter & 817.40 & 741.60\\ 
+        \hline
+        Saturn & 1512.00 & 1346.00\\
+        \hline
+        Uranus & 3011.00 & 2740.00\\ 
+        \hline 
+    \end{tabular}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|r@{--}l|}
+        \hline
+        Height & \multicolumn{2}{|c|}{Ideal Weight}\\
+        (cm) & \multicolumn{2}{c|}{(kg)}\\
+        \hline
+        155 & 53.5 & 64\\ \hline
+        160 & 56 & 67\\ \hline
+        165 & 59 & 71\\ \hline
+        170 & 62.5 & 75.5\\ \hline
+        175 & 66 & 79\\ \hline
+        180 & 70 & 83.5\\ \hline
+        185 & 71.5 & 86.5\\ \hline
+        190 & 78 & 92.5\\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|>{\bfseries}c|c|}
+        \hline
+        \multicolumn{1}{|>{\bfseries}m{1.5cm}|}{\centering Planet}  &  \multicolumn{1}{m{2.3cm}|}{\centering Diameter\\ (km)} \\ \hline
+        Mercury &   4878\\ \hline
+        Venus   &   12104\\ \hline
+        Earth   &   6794\\ \hline
+        Jupiter &   142984\\ \hline
+        Saturn  &   120536\\ \hline
+        Uranus  &   51118\\ \hline
+        Neptune &   49532\\ \hline
+        Pluto   &   2274\\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|r!{--}l|}
+        \hline
+        Height & \multicolumn{2}{|c|}{Ideal Weight}\\
+        (cm) & \multicolumn{2}{c|}{(kg)}\\
+        \hline
+        155 & 53.5 & 64\\ \hline
+        160 & 56 & 67\\ \hline
+        165 & 59 & 71\\ \hline
+        170 & 62.5 & 75.5\\ \hline
+        175 & 66 & 79\\ \hline
+        180 & 70 & 83.5\\ \hline
+        185 & 71.5 & 86.5\\ \hline
+        190 & 78 & 92.5\\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\renewcommand{\multirowsetup}{\centering}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multirow{2}{3cm}{\centering Planet} & \multicolumn{2}{p{6cm}|}{\centering Distance from sun\\ (km)}\\
+        \cline{2-3}
+                & Maximum    & Minimum\\
+        \hline
+        Mercury & 69400000   & 46800000\\ 
+        \hline
+        Venus & 109000000 & 107600000\\ 
+        \hline
+        Earth & 152600000 & 147400000\\ 
+        \hline
+        Mars & 249200000 & 207300000\\ 
+        \hline
+        Jupiter & 817400000 & 741600000\\ 
+        \hline
+        Saturn & 1512000000 & 1346000000\\
+        \hline
+        Uranus & 3011000000 & 2740000000\\ 
+        \hline 
+    \end{tabular}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+    \begin{longtable}{|c|c|}
+        \multicolumn{2}{c}{\textbf{Science and Technology in the Twentieth Century}}\\[5pt]
+        \hline
+        \multicolumn{1}{|c|}{\sffamily Year} & \multicolumn{1}{c|}{\sffamily Event}\\
+        \hline
+        \endfirsthead
+        
+        \multicolumn{2}{c}{\textbf{Science and Technology in the Twentieth Century}(\textit{continued})}\\[5pt]
+        \hline
+        \multicolumn{1}{|c|}{\sffamily Year} & \multicolumn{1}{c|}{\sffamily Event}\\ \hline
+        \endhead
+
+        \hline
+        \multicolumn{2}{r}{\small\itshape continued on the next page}
+        \endfoot
+
+        \hline
+        \multicolumn{2}{r}{\small Source\,:\, \itshape The Cambridge Factfinder}
+        \endlastfoot
+
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        \newpage
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        \newpage
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        1900 & rjp is a handsome boy\\
+        \hline
+    \end{longtable}
+\end{center}
+
+\end{document}

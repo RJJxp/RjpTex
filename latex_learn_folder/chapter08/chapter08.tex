@@ -1,0 +1,532 @@
+\documentclass[a4paper, UTF8]{article}
+
+\usepackage{enumerate}  % enumerate numbering package
+\usepackage{array}  % these three is for table style
+\usepackage{longtable}
+\usepackage{multirow}
+% below is for math 
+\usepackage{amsmath}
+
+\newcommand{\rjpvector}[2]{#1_1,#1_2,\dots,#1_#2}
+% \pagestyle{plain}
+
+\begin{document}
+
+\title{\Huge chapter08 \LaTeX\ Learning}
+\author{\Large rjp \\
+            Tongji Jiading Campus}
+\date{2019-01-22}
+\maketitle
+
+\begin{abstract}
+\large
+    this is chapter08 learning of \LaTeX and i find it interesting.
+    
+    keep going!!
+
+    Don't stop till you get enough
+\end{abstract}
+\thispagestyle{empty}
+\newpage
+
+\pagenumbering{Roman}
+\tableofcontents
+\addtocontents{toc}{\protect\vspace{10pt}}
+
+\newpage
+\pagenumbering{arabic}
+\section{\Large The Basics}
+\quad\ The equation representing a straight line in the Cartesian plane is of the form $ax+by+c=0$, where $a$, $b$, $c$ are constants.
+
+The equation representing a straight line in the Cartesian plane is of the form $ax+by+c=0$, where $a, b, c$ are constants
+
+% way 01
+The equation representing a straight line in the Cartesian plane is of the form 
+$$
+ax+by+c=0
+$$
+where $a$, $b$, $c$ are constants.
+
+% way 02
+The equation representing a straight line in the Cartesian plane is of the form 
+\[
+ax+by+c=0
+\]
+where $a$, $b$, $c$ are constants.
+
+% way 03
+The equation representing a straight line in the Cartesian plane is of the form 
+\begin{displaymath}
+ax+by+c=0
+\end{displaymath}
+where $a$, $b$, $c$ are constants.
+
+\subsection{\large Superscripts and subscripts}
+In the seventeenth century, Fermat conjectured that if $n>2$, then there are no intergers $x$, $y$, $z$ for which
+$$
+x^n+y^n=z^n.
+$$
+This is proved in 1994 by Andrew Wiles.
+
+$$
+x^{mn} \qquad (x^n)^m \qquad x^mn
+$$
+
+The sequence $(X_n)$ defined by
+$$
+x_1=1,\qquad x_2=1, \qquad x_n=x_{n-1}+x_{n-2}\: (n>2)
+$$
+
+\newpage
+\subsection{\large Roots}
+Which is greater $\sqrt[4]{5}$ or $\sqrt[5]{4}$ ?
+
+\section{\Large custom commands}
+Here is the $rjpvector$ by rjp:
+$$
+\rjpvector{x}{n}
+$$
+
+\begin{equation}
+    a=1
+    \numberwithin{equation}{section}
+\end{equation}
+
+\section{\Large more on maths}
+\subsection{\large single equation}
+The equation representing a straight line in the cartesian plane is of the form
+\begin{equation*}
+    ax+by+c=0
+\end{equation*}
+where $a$, $b$, $c$ are constants.
+
+The equation representing a straight line in the cartesian plane is of the form
+\begin{equation}
+    ax+by+c=0
+\end{equation}
+where $a$, $b$, $c$ are constants.
+
+Thus for all real numbers $x$ we have
+\begin{equation*}
+    x\le|x|\quad\text{and}\quad x\ge|x|
+\end{equation*}
+
+and so
+\begin{equation*}
+    x\le|x|\quad\text{for all $x$ in $R$}    
+\end{equation*}
+
+\begin{multline*}
+    (a+b+c+d+e)^2=a^2+b^2+c^2+d^2+e^2\\
+    +2ab+2ac+2ad+2ae+2bc+2bd+2be+2cd+2ce+2de
+\end{multline*}
+
+i am really happy, yesterday i went gym and work out. rjp is a handsome boy.
+
+\begin{multline*}
+    (a+b+c+d+e)^2=a^2+b^2+c^2+d^2+e^2\\
+        +2ab+2ac+2ad+2ae\\
+        +2bc+2be+2bd\\
+        +2cd+2ce\\
+        +2de
+\end{multline*}
+
+
+\begin{equation*}
+    \begin{split}
+        (a+b+c+d+e)^2 & =a^2+b^2+c^2+d^2+e^2\\
+        &\quad+2ab+2ac+2ad+2ae\\
+        &\quad+2bc+2be+2bd\\
+        &\quad+2cd+2ce\\
+        &\quad+2de
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        (a+b)^2 & =(a+b)(a+b)\\
+                & =a^2+ab+ba+b^2\\
+                & = a^2+2ab+b^2
+    \end{split}
+\end{equation*}
+
+\begin{equation}
+    a = 1
+    b=2    
+\end{equation}
+
+\subsection{\large group of equations}
+\begin{gather*}
+    (a,b)+(c,d)=(a+c,b+d)\\
+    (a,b)(c,d)=(ac,bd)
+\end{gather*}
+
+\begin{gather}
+    (a,b)+(c,d)=(a+c,b+d)\\
+    (a,b)(c,d)=(ac,bd)
+\end{gather}
+
+Thus $x$, $y$, $z$ satisfy the equations
+\begin{align*}
+    x+y-z & =1\\
+    x-y+z & =1
+\end{align*}
+
+Thus $x$, $y$, $z$ satisfy the equations
+\begin{align*}
+    x+y-z & =1\\
+    x-y+z & =1\\
+    \intertext{\quad\ and by hypothesis}
+    x+y+z & =1
+\end{align*}
+
+Compare the following sets of equations
+\begin{align*}
+    \cos^2x+\sin^2x & =1    & \cosh^2x-\sinh^2x & =1\\
+    \cos^2x-\sin^2x & =\cos2x   & \cosh^2x+\sinh^2x &= cosh2x
+\end{align*}
+
+Compare the following sets fo equations
+\begin{equation*}
+    \begin{aligned}
+        \cos^2x+\sin^2x & =1\\
+        \cos^2x-\sin^2x & =\cos2x
+    \end{aligned}
+    \qquad\text{and}\qquad
+    \begin{aligned}
+        \cosh^2x-\sinh^2x & =1\\
+        \cosh^2x+\sinh^2x & \cosh2x
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    |x|=
+    \begin{cases}
+        x & \text{if $x\ge 0$}\\
+        -x & \text{if $x\le 0$}
+    \end{cases}
+\end{equation*}
+\newpage
+
+\subsection{\large numbered equation}
+The equation represents a straight line in the plane
+\begin{equation}
+    ax+by+c=0
+    \numberwithin{equation}{section}
+\end{equation} 
+
+where $a$, $b$, $c$ are constants.
+
+The equation represents a straight line in the plane
+\begin{equation}
+    ax+by+c=0
+    \tag{rjp}
+\end{equation} 
+
+where $a$, $b$, $c$ are constants.
+
+The equation represents a straight line in the plane
+\begin{equation}
+    ax+by+c=0
+    \tag*{rjp}
+\end{equation} 
+
+where $a$, $b$, $c$ are constants.
+
+
+Thus $x$, $y$, $z$ satisfy the equations
+\begin{align*}
+    x+y-z & =1\notag\\
+    x-y+z & =1\notag\\
+    \intertext{and by hypothesis}
+    x+y+z & =1\tag{rjpH}
+\end{align*}
+
+Thus $x$, $y$, $z$ satisfy the equations
+\begin{align*}
+    x+y-z & =1\\
+    x-y+z & =1\\
+    \intertext{and by hypothesis}
+    x+y+z & =1\tag{rjpH}
+\end{align*}
+
+\begin{equation}
+    \begin{split}
+        (a+b)^2 & =(a+b)(a+b)\\
+                & =a^2+ab+ba+b^2\\
+                & = a^2+2ab+b^2
+    \end{split}
+\end{equation}
+
+\section{mathematics miscellany}
+% 数学上的混合体
+\subsection{matrices}
+\quad\ The system of equations
+\begin{align*}
+    x+y-z & =1\\
+    x-y+z & =1\\
+    x+y+z & =1
+\end{align*}
+
+can be written in matraix terms as 
+\begin{equation*}
+    \begin{pmatrix}
+        1 & 1 & -1\\
+        1 & -1 & 1\\
+        1 & 1 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        x\\
+        y\\
+        z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1\\
+        1\\
+        1
+    \end{pmatrix}
+\end{equation*}
+
+Here, the pmatraix
+$\begin{pmatrix}
+1 & 1 & -1\\
+1 & -1 & 1\\
+1 & 1 & 1
+\end{pmatrix}$
+is invertible
+
+Here, the matraix
+$\begin{matrix}
+1 & 1 & -1\\
+1 & -1 & 1\\
+1 & 1 & 1
+\end{matrix}$
+is invertible
+
+Here, the bmatraix
+$\begin{bmatrix}
+1 & 1 & -1\\
+1 & -1 & 1\\
+1 & 1 & 1
+\end{bmatrix}$
+is invertible
+
+sometimes mathematics write matrices within parentheses as in 
+$
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+$
+while others prefer quare brackets as in 
+$
+\begin{bmatrix}
+    a & b\\
+    c & d
+\end{bmatrix}
+$
+
+the determination of 
+$
+\begin{vmatrix}
+    a & b\\
+    c & d
+\end{vmatrix}
+$
+is defined by 
+\begin{equation*}
+    \begin{vmatrix}
+        a & b\\
+        c & d
+    \end{vmatrix}
+\end{equation*}
+
+the determination of 
+$
+\begin{vmatrix}
+    a & b\\
+    c & d
+\end{vmatrix}
+$
+is defined by 
+$$
+\begin{vmatrix}
+    a & b\\
+    c & d
+\end{vmatrix}
+$$
+
+a general matrix of $m\times n$ is like
+\begin{equation*}
+    \begin{bmatrix}
+        a_{11} & a_{12} & \dots & a_{1n}\\
+        a_{21} & a_{22} & \dots & a_{2n}\\
+        \hdotsfor{4}\\
+        a_{m1} & a_{m2} & \dots & a_{mn}
+    \end{bmatrix}
+\end{equation*}
+
+\subsection{dots}
+consider a finite sequence $X_1,X_2,\dots$, its sum $X_1+X_2+\dots$ and product $X_1X_2\dots$.
+
+consider a finite sequence $X_1,X_2,\dots$, its sum $X_1+X_2+\dots$ and product $X_1X_2\dots$.
+
+consider a finite sequence $X_1,X_2,\dotsc$, its sum $X_1+X_2+\dotsb$ and product $X_1X_2\dotsm$.
+
+\subsection{delimiters}
+% 定界符
+since 
+$
+\left|
+\begin{smallmatrix}
+    a & h & g\\
+    h & b & f\\
+    g & f & c
+\end{smallmatrix}
+\right|
+=0
+$,
+the matrix
+$
+\left(
+\begin{smallmatrix}
+    a & h & g\\
+    h & b & f\\
+    g & f & c
+\end{smallmatrix}   
+\right)
+$
+is not invertible.
+
+\begin{equation*}
+    \left.
+    \begin{aligned}
+        u_x & =v_y\\
+        u_y & = -v_x
+    \end{aligned}
+    \right\}
+    \quad\text{Cauchy-Riemann Equations}
+\end{equation*}
+
+\begin{equation*}
+    (x+y)^2-(x-y)^2=\left((x+y)+(x-y)\right)\left((x+y)-(x-y)\right)
+\end{equation*}
+
+\begin{equation*}
+    (x+y)^2-(x-y)^2=\{(x+y)+(x-y)\}\{(x+y)-(x-y)\}
+\end{equation*}
+
+\begin{equation*}
+    (x+y)^2-(x-y)^2=\bigl((x+y)+(x-y)\bigr)\bigl((x+y)-(x-y)\bigr)
+\end{equation*}
+
+For $n$-tuples of comlex numbers $(x_1,x_2,\dotsc,x_n)$ and $(y_1,y_2,\dotsc,y_n)$
+\begin{equation*}
+    \left(
+    \sum_{k=1}^{n}|x_{k}y_{k}|
+    \right)^2
+    \le
+    \left(
+    \sum_{k=1}^{n}|x_{k}|    
+    \right)
+    \left(
+    \sum_{k=1}^{n}|y_{k}|    
+    \right)
+\end{equation*}
+
+For $n$-tuples of comlex numbers $(x_1,x_2,\dotsc,x_n)$ and $(y_1,y_2,\dotsc,y_n)$
+\begin{equation*}
+    \biggl(
+    \sum_{k=1}^{n}|x_{k}y_{k}|
+    \biggr)^2
+    \le
+    \biggl(
+    \sum_{k=1}^{n}|x_{k}|    
+    \biggr)
+    \biggl(
+    \sum_{k=1}^{n}|y_{k}|    
+    \biggr)
+\end{equation*}
+
+\subsection{putting one over another}
+From the binomial theorem, it easily follows that if n is an even number, then
+\begin{equation*}
+    1-\binom{1}{n}\frac{1}{2}+\binom{2}{n}\frac{1}{2^2}-\dotsb-\binom{n-1}{n}\frac{1}{2^{n-1}}=0
+\end{equation*}
+
+Since $(X_{n})$ converges to $0$, there exists a positive integer $p$ such that
+\begin{equation*}
+    |x_{n}|<\frac{1}{2}\quad\text{for all $n\ge p$}
+\end{equation*}
+
+
+\newcommand{\rjpda}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}}
+\newcommand{\rjpfang}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+The Christoffel symbol $\genfrac{\{}{\}}{0pt}{}{ij}{k}$ of the second kind is related to the Christoffel symbol $\genfrac{[}{]}{0pt}{}{ij}{k}$ of the first kind by the equation
+\begin{equation*}
+    \rjpda{ij}{k}=g^{k1}\rjpfang{ij}{k}+g^{k2}\rjpfang{ij}{k}
+\end{equation*}
+
+\begin{equation*}
+    \frac{4}{\pi}= 1+\cfrac{1^2}
+                    {2+\cfrac{3^2}
+                    {2+\cfrac{5^2}{2+\dotsb}}}
+\end{equation*}
+
+Thus we can see that
+\begin{equation*}
+    0\xrightarrow{} A\xrightarrow{f} B\xrightarrow{g} C\xrightarrow{} 0
+\end{equation*}
+
+is a short exact sequence
+\newpage
+
+Thus we can see that
+\begin{equation*}
+    0\xrightarrow{} A\xrightarrow[\text{moni}]{f} B\xrightarrow[\text{gbi}]{g} C\xrightarrow{} 0
+\end{equation*}
+
+is a short exact sequence
+
+Thus we can see that
+\begin{equation*}
+    0\xrightarrow{} A\xrightarrow[\text{moni}]{f} B\xrightarrow[\text{gbi}]{g} C\xrightarrow{} 0
+\end{equation*}
+
+is a short exact sequence
+
+Euler not noly proved that the series $\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges, but also that
+\begin{equation*}
+    \sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^{2}}{6}
+\end{equation*}
+
+Euler not noly proved that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges, but also that
+\begin{equation*}
+    \sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^{2}}{6}
+\end{equation*}
+
+Euler not noly proved that the series $\sum\limits_{n=1}^{\infty} \frac{1}{n^2}$ converges, but also that
+\begin{equation*}
+    \sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^{2}}{6}
+\end{equation*}
+
+Euler not noly proved that the series $\sum\limits_{n=1}^{\infty} \frac{1}{n^2}$ converges, but also that
+\begin{equation*}
+    \sum\nolimits_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^{2}}{6}
+\end{equation*}
+
+Thus
+$\lim\limits_{x\to\infty}\int_{0}^{x}\frac{\sin{x}}{x}\mathrm{d}x=\frac{\pi}{2}$
+and so by definition
+\begin{equation*}
+    \int_{0}^{\infty}\frac{\sin{x}}{x}\mathrm{d}x=\frac{\pi}{2}
+\end{equation*}
+
+\begin{equation*}
+    p_{k}(x)=\prod_{\substack{i=1\\i\ne k}}^n \left(\frac{x-t_i}{t_k-t_i} \right)
+\end{equation*}
+
+\subsection{the many faces of math}
+
+\end{document} 
