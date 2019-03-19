@@ -1,0 +1,211 @@
+\documentclass[a4paper, UTF8]{article}
+% enumerate
+\usepackage{enumerate}
+% geometry
+\usepackage{geometry}
+% math
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+% theorem
+\usepackage{amsthm}
+
+% command part
+\newtheorem{thmm}{theorem}[section]
+\newtheorem{thmm01}{theorem}[section]
+\newtheorem{cor}[thmm]{corollary}
+
+\newtheorem{thm}{theorem}[section]
+% setup 01
+\theoremstyle{definition}
+\newtheorem{dfn}{definition}[section]
+% setup 02
+\theoremstyle{remark}
+\newtheorem{note}{note}[section]
+% setup 03
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{lemma}
+% setup the page size
+\setlength{\textwidth}{15cm}
+
+
+\begin{document}
+% title
+\title{\Huge chapter09 Learning}
+\author{rjp at Siping campus of Tongji university}
+\date{2019-01-30}
+\maketitle
+% abstract
+\begin{abstract}
+    forget to push the .tex to github 
+
+    so I have to rewrite the chapter09
+
+    luckily i did not write too mucn on t440
+
+    keep Learning
+\end{abstract}
+\thispagestyle{empty}   % set the foot and head of the page empty
+\newpage
+% make the content
+\pagenumbering{Roman}   % all the content page number style is upper case roman letter
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}  
+\section{\Large Theorems in \LaTeX}
+\begin{thmm}
+    The sum of the angles of a triangle is $180^\circ$.
+\end{thmm}
+
+\begin{cor}
+    The sum of the angles of a quadrilateral is $360^\circ$.
+\end{cor}
+
+rjp is a handsome boy and everybody should love him. And what about you? i love myself. i do not want to go home. i wanna stay here studying and having fun.
+
+\begin{thmm01}
+    The sum of the angles of a triangle is $180^\circ$.
+\end{thmm01}
+
+\begin{thmm}
+    [0,1] is a compact subsect of $\mathbb{R}$.    
+\end{thmm}
+
+\begin{thmm}
+    $[0,1]$ is a compact subsect of $\mathbb{R}$.    
+\end{thmm}
+\newpage
+
+\section{\Large designer Theorems -- the amsthm package}
+\subsection{\large ready made styles}
+\begin{dfn}
+    a triangle is the figure formed by joining each pair of three non collinear points by line seqments.
+\end{dfn}
+
+\begin{note}
+    a triangle has three angles.
+\end{note}
+
+\begin{thm}
+    the sum of the angles of a triangle is $180^\circ$.
+\end{thm}
+
+\begin{lem}
+    the sum of any two sides of a triangles is greater than or equal to the third
+\end{lem}
+
+\subsection{custom made theorem}
+\newtheoremstyle{rjpstyle}{}{}{\slshape}{}{\scshape}{.}{ }{}
+\theoremstyle{rjpstyle}
+\newtheorem{rrr}{theorem}[section]
+\theoremstyle{plain}
+\begin{rrr}
+    the sum of angles of a triangle is $180^\circ$.
+\end{rrr}
+
+\newtheoremstyle{nonum1}{}{}{\itshape}{}{\bfseries}{.}{ }{#1 (\mdseries #3)}
+\newtheoremstyle{nonum2}{}{}{\itshape}{}{\bfseries}{.}{ }{}
+\theoremstyle{nonum1}
+\newtheorem{cau1}{Cauchy's Theorem}
+
+\begin{cau1}[Third version]
+    If $G$ is a simply connected open subset of $\mathbb{c}$, then for every closed rectifiable curve $\gamma$ in $G$, we have
+    \begin{equation*}
+        \int_{\gamma}f=0
+    \end{equation*}
+\end{cau1}
+
+\theoremstyle{nonum2}
+\newtheorem{cau2}{Cauchy's Theorem}
+\begin{cau2}[Third version]
+    If $G$ is a simply connected open subset of $\mathbb{c}$, then for every closed rectifiable curve $\gamma$ in $G$, we have
+    \begin{equation*}
+        \int_{\gamma}f=0
+    \end{equation*}
+\end{cau2}
+
+\theoremstyle{nonum1}
+\newtheorem{Riemann}{Riemann Mapping THeorem} 
+\begin{Riemann}
+    Every open simply connected proper subset of $\mathbb{C}$ is analytically homeomorphic to the open unit disk in $\mathbb{C}$.
+\end{Riemann}
+
+\newtheoremstyle{n1}{}{}{\itshape}{}{\bfseries}{.}{ }{\thmname{#1}\thmnote{ (\bfseries #3)}}
+\theoremstyle{n1}
+\newtheorem{ccc}{Cauchy's Theorem}
+\begin{ccc}[Third version]
+    If $G$ is a simply connected open subset of $\mathbb{c}$, then for every closed rectifiable curve $\gamma$ in $G$, we have
+    \begin{equation*}
+        \int_{\gamma}f=0
+    \end{equation*}
+\end{ccc}
+
+\newtheorem{Riemann123}{Riemann Mapping Theorem}
+\begin{Riemann123}
+    Every open simply connected proper subset of $\mathbb{C}$ is analytically homeomorphic to the open unit disk in $\mathbb{C}$.
+\end{Riemann123}
+\newpage
+
+How does a theorem's style is determinated?
+
+Command {\itshape \textbackslash theoremstyle} 's scope will not end until a new {\itshape \textbackslash theoremstyle} shows up. All the style of these theorems defined by {\itshape \textbackslash newtherom} command in the scope of corresponding {\itshape \textbackslash theoremstyle} command.
+
+So assume there are 2 {\itshape \textbackslash theoremstyle} commands {\rmfamily s1, s2} and theorem {\rmfamily s1\_t1, s1\_t2} defined in {\rmfamily s1}, theorem {\rmfamily s2\_t1} defined in {\rmfamily s2}. When you wirte {\rmfamily s1\_t2} after {\rmfamily s2}, {\rmfamily s1\_t2} is still the type of {\rmfamily s1}, though there is already a command setting a new theoremstyle.
+
+\subsection{That's more}
+\swapnumbers 
+\theoremstyle{plain} 
+\newtheorem{numfirstthm}{Theorem}[section]
+\begin{numfirstthm}[Euclid]
+    The sum of the angles in a triangle is $180ˆ\circ$
+\end{numfirstthm}
+
+\begin{proof} 
+    Let $\{p_1,p_2,\dotsc p_k\}$ be a finite set of primes. Define $n=p_1p_2\dotsm p_k+1$. Then either $n$ itself is a prime or has a prime factor. Now $n$ is neither equal to nor is divisible by any of the primes $p_1,p_2,\dotsc p_k$ so that in either case, we get a prime different from $p_1,p_2,\dotsc p_k$. Thus no finite set of primes can include all the primes.
+\end{proof}
+
+\begin{proof}[\textsc{Proof\,(Euclid)}:]
+    Let $\{p_1,p_2,\dotsc p_k\}$ be a finite set of primes. Define $n=p_1p_2\dotsm p_k+1$. Then either $n$ itself is a prime or has a prime factor. Now $n$ is neither equal to nor is divisible by any of the primes $p_1,p_2,\dotsc p_k$ so that in either case, we get a prime different from $p_1,p_2,\dotsc p_k$. Thus no finite set of primes can include all the primes.
+\end{proof}
+
+\theoremstyle{plain}
+\newtheorem{testrjp}{Theorem}[section]
+\begin{testrjp}
+    The square of the sum of two numbers is equal to the sum of their quares and twice their product.
+\end{testrjp}
+
+\begin{proof}
+    This follows easily from the equation
+    \begin{equation*}
+        (x+y)^2=x^2+y^2+2xy
+    \end{equation*}
+\end{proof}
+
+\begin{testrjp}
+    The square of the sum of two numbers is equal to the sum of their quares and twice their product.
+\end{testrjp}
+\begin{proof}
+    This follows easily from the equation
+    \begin{equation*}
+        (x+y)^2=x^2+y^2+2xy\tag*{\qed}
+    \end{equation*}
+    \renewcommand{\qed}{}
+\end{proof}
+
+\begin{testrjp}
+    The square of the sum of two numbers is equal to the sum of their quares and twice their product.
+\end{testrjp}
+\begin{proof}
+    This follows easily from the equation
+    \begin{equation*}
+        (x+y)^2=x^2+y^2+2xy\qed
+    \end{equation*}
+    \renewcommand{\qed}{}
+\end{proof}
+\newpage
+
+\section{\Large housekeeping}
+
+\end{document}
