@@ -1,0 +1,374 @@
+\documentclass[a4paper, UTF8, 12pt]{article}
+
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{paracol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,   % false, ,链接黑色, 外有红框
+    linkcolor=black, % 目录颜色, 脚注颜色
+    filecolor=blue, % 链接本地文件的链接颜色
+    urlcolor=cyan, % 网页链接颜色
+    anchorcolor=blue,
+    citecolor=yellow    % 参考文献颜色
+}
+
+\geometry{
+    textheight=230mm,
+    textwidth=180mm
+}
+
+\begin{document}
+\title{\Huge 英译汉课程}
+\author{\Large 
+        第五周 第六周 \\[12pt]
+        1931991 任家平 \\[12pt]
+        同济大学 \\[12pt]
+        测绘与地理信息学院}
+\date{2019-10-07}
+
+\maketitle
+
+\begin{abstract}
+    本文档为对初次翻译的校正. 
+    
+    除了对多处翻译错误的校正, 也对文档格式进行了修正. 在双栏模式中, 在左侧英文原文中的脚注中添加对缩略词的注释, 在右侧中文脚注中添加对前次翻译结果校正的标记. 在缩略词表中, 对含义不清的缩略词添加备注. 由于致谢(ACKNOWLEDGEMENTS)部分翻译过于简陋, 重新翻译, 在此不赘述.
+\end{abstract}
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+\addtocontents{toc}{\protect\vspace{10pt}}
+
+\newpage
+\pagenumbering{arabic}
+
+\begin{paracol}{2}[\section{NOTE(说明)}]
+    
+    \switchcolumn*
+    在联合国贸易与发展会议的技术与物流司\footnote{之前将 `section' 译为 `部门'}中, 信息与通讯技术分析科对信息通讯技术的发展影响进行了政策导向的分析工作. 该科负责信息经济报告的编写. 它促进了关于信息通讯技术发展的国际对话, 致力于提高发展中国家衡量信息经济的能力, 并完成相关的政策和法律框架的设计.
+
+    \switchcolumn
+    Within the UNCTAD\footnote{United Nations Conference on Trade and Development} Division on Technology and Logistics, the ICT Analysis Section carries out policy-oriented analytical work on the development implications of information and communication technologies (ICTs). It is responsible for the preparation of the Information Economy Report. The ICT Analysis Section promotes international dialogue on issues related to ICTs for development, and contributes to building developing countries’ capacities to measure the information economy and to design and implement relevant policies and legal frameworks. 
+
+    \switchcolumn*
+    本篇报告中, ``国家/经济体\footnote{之前直译为 `经济'}'' 可能多指的是 ``领土/地区''. 所用的名称\footnote{之前将 `designation' 译为 `分类'}和材料的表述并不代表联合国秘书处就该国家, 领土, 城市地区或当局的法律地位或是边界划分的任何观点或意见. 此外, 对于某些地区的称法只是为了统计分析的便利, 绝无任何对其发展过程中发展成果进行主观评价的意思. 本篇报告中的大型国家组织分类遵守联合国统计局标准, 其如下:
+
+    \switchcolumn
+    In this Report, the terms country/economy refer, as appropriate, to territories or areas. The designations employed and the presentation of the material do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. In addition, the designations of country groups are intended solely for statistical or analytical convenience and do not necessarily express a judgement about the stage of development reached by a particular country or area in the development process. The major country groupings used in this Report follow the classification of the United Nations Statistical Office. These are: 
+
+    \switchcolumn*
+    发达地区: 经济合作与发展组织中的成员\footnote{之前译为 `成员国'}(不包括智利, 墨西哥, 韩国, 土耳其), 新加入欧盟的成员国但并非经济合作与发展组织成员\footnotemark[3](保加利亚，塞浦路斯，拉脱维亚，立陶宛，马耳他和罗马尼亚), 安道尔，列支敦士登，摩纳哥和圣马力诺. 经济转型国家：欧洲东南部和独立国家联合体.
+    发展中地区: 总的来说就是上述未提到的地区. 为应统计要求, 中国的数据不包括香港和澳门行政特区与台湾省.
+
+
+    \switchcolumn
+    Developed countries: the member countries of the Organization for Economic Cooperation and Development (OECD) (other than Chile, Mexico, the Republic of Korea and Turkey), plus the new European Union member countries that are not OECD members (Bulgaria, Cyprus, Latvia, Lithuania, Malta and Romania), plus Andorra, Liechtenstein, Monaco and San Marino. Countries with economies in transition: South-East Europe and the Commonwealth of Independent States. Developing economies: in general, all the economies that are not specified above. For statistical purposes, the data for China do not include those for Hong Kong Special Administrative Region (Hong Kong, China), Macao Special Administrative Region (Macao, China), or Taiwan Province of China. 
+
+    \switchcolumn*
+    本篇报告所涉及到关于某公司与其活动并不表示联合国贸易与发展会议对其认同
+
+    \switchcolumn
+    Reference to companies and their activities should not be construed as an endorsement by UNCTAD of those companies or their activities.
+
+    \switchcolumn*
+    表格中会出现以下符号.
+    \switchcolumn
+    The following symbols have been used in the tables: 
+
+    \begin{itemize}
+        \switchcolumn*
+        \item 两个点(..) 表示数据不可获取或是没有可靠数据源. 这种情况下, 由于该行没有数据, 会被忽略.
+        \switchcolumn
+        \item Two dots(..)indicate that data are not available or are not separately reported. Rows in tables have been omitted in those cases where no data are available for any of the elements in the row; 
+        
+        \switchcolumn*
+        \item 破折号表示该项为零或是其值可被忽略.
+        \switchcolumn
+        \item A dash (-) indicates that the item is equal to zero or its value is negligible;
+        
+        \switchcolumn*
+        \item 无特殊说明, 空格表示该项不可用.
+        \switchcolumn
+        \item A blank in a table indicates that the item is not applicable, unless otherwise indicated; 
+        
+        \switchcolumn*
+        \item 日期之间的斜杠可表示年份, 例如 1994/95 表示财政年度.
+        \switchcolumn
+        \item A slash (/) between dates representing years, for example, 1994/95, indicates a financial year; 
+        
+        \switchcolumn*
+        \item 日期之前的连接号可表示年份, 例如 1994--1995 表示包括1994 和 1995 年的时间段.
+        \switchcolumn
+        \item Use of an en dash (–) between dates representing years, for example, 1994–1995, signifies the full period involved, including the beginning and end years;
+        
+        \switchcolumn*
+        \item 无特殊说明, \$表示美元.
+        \switchcolumn
+        \item Reference to “dollars” (\$) means United States of America dollars, unless otherwise indicated; 
+        
+        \switchcolumn*
+        \item 无特殊说明, 年度增长率或是变化率表示的是复增长率或是复变化率.
+        \switchcolumn
+        \item Annual rates of growth or change, unless otherwise stated, refer to annual compound rates;
+        
+        \switchcolumn*
+        \item 由于舍入误差, 表格中数据之和可能无法凑整\footnote{将 `details and percentage' 译为 `数据'}.
+        \switchcolumn
+        \item Details and percentages in tables do not necessarily add up to the totals because of rounding. 
+    \end{itemize}
+
+    \switchcolumn*
+    本篇报告中的数据可被自由引用, 如果有致谢更好. 其引用如下:
+    
+    \begin{center}
+        UNITED NATIONS PUBLICATION 
+
+        UNCTAD/IER/2013 
+
+        Sales No. E.13.II.D.6
+
+        ISSN 2075-4396 
+
+        ISBN 978-92-1-112869-7 
+
+        e-ISBN 978-92-1-054154-1 
+
+        Copyright © United Nations, 2013
+
+        All rights reserved. Printed in Switzerland
+    \end{center}
+
+    \switchcolumn
+    The material contained in this study may be freely quoted with appropriate acknowledgement.
+
+    \begin{center}
+        UNITED NATIONS PUBLICATION 
+
+        UNCTAD/IER/2013 
+
+        Sales No. E.13.II.D.6
+
+        ISSN 2075-4396 
+
+        ISBN 978-92-1-112869-7 
+
+        e-ISBN 978-92-1-054154-1 
+
+        Copyright © United Nations, 2013
+
+        All rights reserved. Printed in Switzerland
+    \end{center}
+
+\end{paracol}
+
+\begin{paracol}{2}[\section{PREFACE(前言)}]
+    \switchcolumn*
+    信息技术领域的创新依然高歌猛进. 云计算就是其中之一, 数据处理, 传输和存储技术的重要突破使云计算在提供公共和私人服务上愈发重要. 这些创新为经济和社会发展提供了巨大潜力, 勾画出一幅繁荣公正可持续发展的未来宏图, 让实现千年大计成为可能. 
+
+    \switchcolumn   
+    Innovation in the realm of information technology continues its rapid pace, with cloud computing representing one of the latest advances. Significant improvements in the capacity to process, transmit and store data are making cloud computing increasingly important in the delivery of public and private services. This has considerable potential for economic and social development, in particular our efforts to achieve the Millennium Development Goals and define a bold agenda for a prosperous, sustainable and equitable future. 
+
+    \switchcolumn*
+    2013年的信息经济报告标志着联合国首次在采用率较低中低收入国家检验云计算潜在的经济效益. 在发展中国家的政府, 企业和其他组织正在考虑是否要将其部分或是所有数据迁移到云端之际, 本篇报告犹如雪中送炭. 在此, 我向所有感兴趣者推荐本篇报告, 并分析云经济的利弊.
+    \switchcolumn
+    The Information Economy Report 2013 marks the first time the United Nations is examining the economic potential of cloud computing for low- and middle-income countries, where rates of adoption are currently low. With governments, businesses and other organizations in the developing world considering whether to migrate some or all of their data and activities to the cloud, this publication is especially timely. I commend its information and analysis to all those interested in learning more about the benefits and risks of the cloud economy.
+    \switchcolumn*
+    
+    \begin{center}
+        (此处为签名)
+
+        BAN Ki-moon 
+        
+        Secretary-General
+        
+        United Nations
+    \end{center}
+    \switchcolumn
+    \begin{center}
+        \hspace{10pt}\\
+        BAN Ki-moon 
+        
+        Secretary-General
+        
+        United Nations
+    \end{center}
+    
+\end{paracol}
+
+\begin{paracol}{2}[\section{ACKNOWLEDGEMENTS(致谢)}]
+    \switchcolumn*
+    在技术物流司司长 Anne Miroux 的领导下, Torbjörn Fredriksson(组长), Cécile Barayre, Shubhangi Denblyden, Scarlett Fondeur Gil, Suwan Jang, Diana Korka, Smita Lakhe and Marie Sicat 组成的队伍编写完成了《2013信息经济报告》.
+    \switchcolumn
+    The Information Economy Report 2013 was prepared by a team comprising Torbjörn Fredriksson (team leader), Cécile Barayre, Shubhangi Denblyden, Scarlett Fondeur Gil, Suwan Jang, Diana Korka, Smita Lakhe and Marie Sicat under the direction of Anne Miroux, Director of the Division on Technology and Logistics. 
+   
+    \switchcolumn*
+    感谢由 Michael Minges, David Souter, Ian Walden and Shazna Zuhyle 为报告作出的重要贡献\footnote{之前将 `input' 译为 `提供的数据'}. 感谢非洲 ICT 研究院提供对的5个非洲城市原创性研究结果\footnote{之前漏译 `original research'}. 也感谢 Tiziana Bonapace, Axel Daiber, Nir Kshetri, Rémi Lang and Howard Williams 为报告作出的贡献.
+    \switchcolumn
+    The report benefited from major substantive inputs provided by Michael Minges, David Souter, Ian Walden and Shazna Zuhyle. Research ICT Africa provided original research for five country case studies. Additional inputs were contribut-ed by Tiziana Bonapace, Axel Daiber, Nir Kshetri, Rémi Lang and Howard Williams. 
+   
+    \switchcolumn*
+    感谢在2013年2月日内瓦一场集思广益的会议上专家们 Jamil Chawki, Alison Gillwald, Abi Jagun, Martin Labbé, Juuso Moisander, Jason Munyan, Jorge Navarro, Thao Nguyen, Mar ta Pérez Cusó and Lucas von Zallinger 为本报告初版提纲提出的专业意见. 也同样感谢参加2013年7月在日内瓦举行的一场同行审查会议的专家们 Chris Connolly, Bernd Friedrich, Alison Gillwald, Angel González-Sanz, Nir Kshetri, Matthias Langenegger, Mpho Moyo, Tansuğ Ok, Daniel Ra mos and Carlos Razo 对本报告各个部分宝贵的反馈意见.
+    \switchcolumn
+    Comments on the initial outline of the report were provided by experts attending a brainstorming meeting organized in Geneva in February 2013, including Jamil Chawki, Alison Gillwald, Abi Jagun, Martin Labbé, Juuso Moisander, Jason Munyan, Jorge Navarro, Thao Nguyen, Mar ta Pérez Cusó and Lucas von Zallinger. Valuable feedback on various parts of the text was also given by experts attending a peer review meeting organized in Geneva in July 2013, including Chris Connolly, Bernd Friedrich, Alison Gillwald, Angel González-Sanz, Nir Kshetri, Matthias Langenegger, Mpho Moyo, Tansuğ Ok, Daniel Ramos and Carlos Razo. 
+   
+    \switchcolumn*
+    感谢在报告编写过程中 Dimo Calovski, Padmashree Gehl Sampath, Esperanza Magpantay, Markie Muryawan and Marco Obiso 等专家的修改意见. 也感谢联合国贸易与发展会议实习生 Ngozi Onodugo 对报告编写的帮助.
+    \switchcolumn
+    Additional comments were received at various stages of the production of the report from Dimo Calovski, Padmashree Gehl Sampath, Esperanza Magpantay, Markie Muryawan and Marco Obiso. Ngozi Onodugo provided helpful assistance and inputs during her internship with UNCTAD. 
+   
+    \switchcolumn*
+    感谢国家统计局提供的数据与参加关于ICT企业用法与ICT部门调查问卷的参与者. 同时也对提供数据的国际电信联盟, 亚洲网络经济改革学习计划, 非洲 ICT 研究中心, 电信地理公司致以衷心感谢.
+    \switchcolumn
+    UNCTAD is grateful for the sharing of data by national statistical offices and responses received to UNCTAD’s annual survey questionnaire on ICT usage by enterprises and on the ICT sector. The sharing of data for this report by the International Telecommunication Union, LIRNEasia\footnote{Learning Initiatives on Reforms for Network Economies Asia}, Research ICT Africa and TeleGeography is highly appreciated. 
+   
+    \switchcolumn*
+    感谢 Sophie Combette 的封面制作, Nathalie Loriot 进行的排版工作, Stephane Porzi and Christian Rosé 的图片工作 与  Maritza Ascencios, Lucy Annette Deleze-Black and John Rogers 对报告的编辑工作.
+    \switchcolumn
+    The cover was done by Sophie Combette. Desktop publishing was done by Nathalie Loriot, graphics were carried out by Stephane Porzi and Christian Rosé and the Information Economy Report 2013 was edited by Maritza Ascencios, Lucy Annette Deleze-Black and John Rogers. 
+   
+    \switchcolumn*
+    我司对于芬兰政府与韩国政府的资助致以衷心感谢.
+    \switchcolumn
+    Financial support from the Government of Finland and the Republic of Korea is gratefully acknowledged. 
+\end{paracol}
+
+\section{LIST OF ABBREVIATIONS(缩略词)}
+\begin{longtable}{m{2cm}m{3cm}m{3cm}m{4cm}}
+    \hline
+    {\bfseries 简称} & {\bfseries 全称} & {\bfseries 翻译} & {\bfseries 备注}\\[5pt] \hline
+    3G & third generation (refers to mobile phones) & 第三代移动通信技术 & \\
+    \hline
+    ACP & The African, Caribbean and Pacific Group of States & 太平洋地区国家集团 & \\
+    \hline
+    ADSL & asymmetric digital subscriber line & 非对称数字用户线路 & \\  
+    \hline
+    API & application programming interface & 应用编程接口 & \\
+    \hline
+    BPaaS & business process as a service & 业务流程即服务 & 云计算交付模式之一 \\
+    \hline
+    BPO & business process outsourcing & 业务流程外包 & 将职能部门的全部功能都转移给供应商 \\
+    \hline
+    bps & bits per second & 比特每秒, 波特率 & \\
+    \hline
+    BRICS & Brazil, the Russian Federation, India, China and South Africa & 金砖五国 & 巴西, 俄罗斯, 印度, 中国, 南非\\
+    \hline
+    CaaS & communication as a service & 通信即服务 & \\
+    \hline
+    CERT & computer emergency response team & 计算机应急响应小组 &\\
+    \hline
+    CIO & chief information officer & 首席信息官 & \\
+    \hline
+    CPC & Central Product Classification & 中心产品目录 & \\
+    \hline
+    CPU & entral processing unit & 中央处理器 & \\
+    \hline
+    CRM & client customer relationship management & 客户关系管理 &\\
+    \hline
+    ERP & enterprise resource planning & 企业资源规划 & \\
+    \hline
+    GATS & General Agreement on Trade in Services & 服务贸易总协议 & \\
+    \hline
+    GB & gigabyte & 吉字节 & \\
+    \hline
+    Gbit/s, Gbps & gigabits per second & 千兆位每秒 & \\
+    \hline
+    GDP & gross domestic product & 国内生产总值 & \\
+    \hline
+    IaaS & infrastructure as a service & 基础设施即服务 & 消费者使用处理、储存、网络以及各种基础运算资源，部署与执行操作系统或应用程序等各种软件\\
+    \hline
+    ICT & information and communication technology & 信息与通信技术 & \\
+    \hline
+    IDC & International Data Corporation & 国际数据公司 & \\
+    \hline
+    IP & Internet protocol & 网际协议 & \\
+    \hline
+    ISO & International Organization for Standardization & 国际标准组织 & \\
+    \hline
+    ISP & Internet service provider & 互联网服务供应商 & \\
+    \hline
+    IT & information technology & 信息技术 & \\
+    \hline
+    ITU & International Telecommunication Union & (联合国)国际电信联盟 &\\
+    \hline
+    ITU-T & ITU Telecommunication Standardization Sector & 国际电信联盟电信标准部 & \\
+    \hline
+    IXP & Internet exchange point & 互联网交换中心 & \\
+    \hline
+    kbit/s, kbps & kilobits per second & 比特率, 千比特每秒 & \\
+    \hline
+    LDC & least developed country & 最不发达国家 & \\
+    \hline
+    LTE & long-term evolution & 长期演进技术 & \\
+    \hline
+    m2m & mothers-2-mothers organization & 艾滋母亲互助协会 & \\
+    \hline
+    Mbit/s, Mbps & megabits per second & 兆字节每秒 & \\
+    \hline
+    ms & millisecond & 毫秒 & \\
+    \hline
+    NCIA & National Computing and Information Agency (Republic of Korea) & 综合计算机中心 & \\
+    \hline
+    NDC & national data centre & 国家数据中心 & \\
+    \hline
+    NGO & non-governmental organization & 非政府组织 & \\
+    \hline
+    NIST & National Institute of Standards and Technology & 国家标准与技术协会 & \\
+    \hline
+    NTT & Nippon Telegraph and Telephone Corporation & 日本电报电话公司 & \\
+    \hline
+    OECD & Organization for Economic Cooperation and Development & 经济合作与发展组织 & \\
+    \hline
+    PaaS & platform as a service & 平台即服务 & \\
+    \hline
+    PC & personal computer & 个人电脑 & \\
+    \hline
+    PPP & public–private partnership & 公私合作, 公私合营 & \\
+    \hline
+    PUE & power usage effectiveness & 能源使用效率 & \\
+    \hline
+    QoS & quality of service & 服务质量 & \\
+    \hline
+    RTT & round-trip time & 往返时延 & \\
+    \hline
+    SaaS & software as a service & 软件即服务 & \\
+    \hline
+    SLA & service level agreement & 服务级别协议 & \\ 
+    \hline
+    SME & small and medium-sized enterprise & 中小型企业 & \\
+    \hline
+    SMS & short message service & 短信服务 & \\
+    \hline
+    Tbps & terabits per second & 兆兆每秒 & \\
+    \hline
+    TDF & transborder data flow & 跨境数据流 & \\ 
+    \hline
+    TNC & transnational corporation & 跨国公司 & \\
+    \hline
+    UNCTAD & United Nations Conference on Trade and Development & 联合国贸易与发展会议 & \\
+    \hline
+    WTO & World Trade Organization & 世界贸易组织 & \\
+    \hline
+    XaaS & x as a service & 一切皆服务 & \\
+    \hline
+\end{longtable}
+
+\section{翻译反思}
+
+第一版翻译非常糟糕, 今天在看了其他同学的译文后, 深感惭愧. 他们能在翻译过程中看到我看不到的地方. 比如 `UNCTAD' 的翻译, 他们查了很多资料, 再去下定论, 而我随便百科一下便完事. 在我潜意识中, 认为这种官方的翻译不用过于纠结, 查找, 复制黏贴就完事. 再比如致谢部分中的 `major substantive input' 和 `addtional input' 翻译时要注意侧重点, 我觉得反正都是致谢, 感谢就可以了. 诸如此类, 结果就是把所有的问题全都简单化. 这大概就是大佬和菜鸡的区别吧, 蛤蛤, 可真无奈.
+
+术语表部分算是被专业化了, 列数, 行序等注意点. 人名汉化有专业指南. 同时要注意译文翻译风格的一致性, 这一点和代码有想通之处.
+
+被展示同学报告所体现的难点和我自己的难点不一样. 我觉得困难的地方主要是说明部分的一二段.  
+
+\end{document}
