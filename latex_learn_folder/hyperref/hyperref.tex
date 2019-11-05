@@ -1,0 +1,50 @@
+\documentclass{ctexbook} 
+\usepackage{fancyvrb} 
+\usepackage{hyperref} 
+\hypersetup{colorlinks, linkcolor=blue} 
+\begin{document} 
+\section{title} 
+    \begin{quote} 
+    \begin{Verbatim}[gobble=4] 
+    \emph{emphasis} 
+    \uline{underline} 
+    \uwave{waveline} 
+    \sout{strike-out} 
+    \end{Verbatim} 
+    \centering 
+    \hypertarget{ex:emphasis}{例1.1}：字体强调和下划线 
+    \end{quote} 
+\newpage
+\newpage
+文字\hyperlink{ex:emphasis}{例1.1} 
+\end{document}
+
+
+
+
+% \documentclass{ctexbook} 
+% \usepackage{fancyvrb} 
+% \usepackage{hyperref} 
+% \hypersetup{colorlinks, linkcolor=blue} 
+% \newcounter{examplerjp}[section]
+% % \counterwithin{example}{section} 
+% \newcommand{\examplename}{e.g.} 
+% \newcommand{\exampleTitle}[1]{ 
+% \refstepcounter{examplerjp} 
+% \examplename\theexamplerjp：#1\par} 
+% \begin{document} 
+% \section{title} 
+%     \begin{quote} 
+%         \begin{Verbatim}[gobble=4] 
+%             \emph{emphasis} 
+%             \uline{underline} 
+%             \uwave{waveline} 
+%             \sout{strike-out} 
+%         \end{Verbatim} 
+%         \centering 
+%         \exampleTitle{RJPRJP}\label{ex:emphasis} 
+%         \end{quote} 
+%     \newpage
+%     \theexamplerjp
+%     word\autoref{ex:emphasis} 
+% \end{document}
