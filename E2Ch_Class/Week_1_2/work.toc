@@ -1,0 +1,14 @@
+\vspace {10pt}
+\contentsline {part}{I\hspace {1em}作业}{1}
+\contentsline {section}{\numberline {1}正文(部分)}{2}
+\contentsline {section}{\numberline {2}第一版}{3}
+\contentsline {subsection}{\numberline {2.1}翻译}{3}
+\contentsline {subsection}{\numberline {2.2}反思}{4}
+\contentsline {section}{\numberline {3}第二版}{7}
+\contentsline {subsection}{\numberline {3.1}翻译}{7}
+\contentsline {subsection}{\numberline {3.2}反思}{7}
+\contentsline {part}{II\hspace {1em}补充性材料}{9}
+\contentsline {section}{\numberline {4}正文(全文)}{10}
+\contentsline {section}{\numberline {5}翻译}{13}
+\contentsline {section}{\numberline {6}文章总结}{15}
+\contentsline {section}{\numberline {7}翻译感想}{16}

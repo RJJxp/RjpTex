@@ -1,0 +1,7 @@
+\vspace {10pt}
+\contentsline {section}{\numberline {1}英文原文}{1}{section.1}
+\contentsline {section}{\numberline {2}翻译对比}{3}{section.2}
+\contentsline {paragraph}{}{3}{section*.12}
+\contentsline {paragraph}{}{4}{section*.14}
+\contentsline {paragraph}{}{4}{section*.13}
+\contentsline {section}{\numberline {3}反思}{5}{section.3}

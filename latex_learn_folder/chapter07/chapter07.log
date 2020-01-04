@@ -1,0 +1,126 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2019.1.19)  8 OCT 2019 20:42
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/rjjjj/Desktop/RjpTex/latex_learn_folder/chapter07/chapter07.tex
+(c:/Users/rjjjj/Desktop/RjpTex/latex_learn_folder/chapter07/chapter07.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(c:/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2017/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (c:/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count87
+\LTcapwidth=\dimen103
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count88
+\LT@rows=\count89
+\c@LT@tables=\count90
+\c@LT@chunks=\count91
+\LT@p@ftn=\toks14
+) (c:/texlive/2017/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks15
+) (c:/texlive/2017/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen104
+\extrarowheight=\dimen105
+\NC@list=\toks16
+\extratabsurround=\skip47
+\backup@length=\skip48
+) (c:/texlive/2017/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip49
+\multirow@cntb=\count92
+\multirow@dima=\skip50
+\bigstrutjot=\dimen106
+)
+
+LaTeX Warning: Unused global option(s):
+    [UTF8].
+
+No file chapter07.aux.
+\openout1 = `chapter07.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+[1
+
+{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 98.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 98.
+ [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 231.
+ (c:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 231.
+ [5] [6] [7] [8]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 438.
+
+[9]
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+[10] (./chapter07.aux) ) 
+Here is how much of TeX's memory you used:
+ 467 strings out of 492995
+ 5682 string characters out of 6136402
+ 67980 words of memory out of 5000000
+ 4075 multiletter control sequences out of 15000+600000
+ 9554 words of font info for 33 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 23i,9n,17p,226b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on chapter07.pdf (10 pages, 128060 bytes).
+PDF statistics:
+ 77 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

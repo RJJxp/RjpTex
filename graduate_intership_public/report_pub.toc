@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}前言之废话连篇}{1}
+\contentsline {section}{\numberline {2}外面的世界很精彩}{2}
+\contentsline {subsection}{\numberline {2.1}之前的苦力实习}{2}
+\contentsline {subsection}{\numberline {2.2}天翻地覆的实习}{3}
+\contentsline {subsection}{\numberline {2.3}大学四年反思}{4}
