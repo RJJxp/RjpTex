@@ -1,0 +1,61 @@
+\documentclass[a4paper, UTF8, 12pt]{article}
+
+\usepackage{ctex}
+\usepackage{abstract}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,   % false, ,链接黑色, 外有红框
+    linkcolor=black, % 目录颜色, 脚注颜色
+    filecolor=blue, % 链接本地文件的链接颜色
+    urlcolor=cyan, % 网页链接颜色
+    anchorcolor=blue,
+    citecolor=green    % 参考文献颜色
+}
+\graphicspath{{pics/}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+\bibliographystyle{plainnat}
+
+\begin{document}
+\title{\Huge 工程测量-平面拟合及可视化}
+\author{\Large 
+        1931991 任家平 \\[12pt]
+        同济大学 \\[12pt]
+        测绘与地理信息学院}
+\date{2019-12-27}
+\maketitle
+\thispagestyle{empty}
+
+\include{chapters/abstract}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\include{chapters/chap01}
+\include{chapters/chap02}
+\include{chapters/chap03}
+\include{chapters/chap04}
+
+\listoffigures
+\addcontentsline{toc}{section}{插图目录}
+\listoftables
+\addcontentsline{toc}{section}{表格目录}
+\newpage
+\nocite{*}
+
+\bibliography{ref}
+\addcontentsline{toc}{section}{参考文献}
+
+\end{document}

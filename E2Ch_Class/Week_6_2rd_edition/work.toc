@@ -1,6 +1,0 @@
-\vspace {10pt}
-\contentsline {section}{\numberline {1}NOTE(说明)}{1}{section.1}
-\contentsline {section}{\numberline {2}PREFACE(前言)}{3}{section.2}
-\contentsline {section}{\numberline {3}ACKNOWLEDGEMENTS(致谢)}{4}{section.3}
-\contentsline {section}{\numberline {4}LIST OF ABBREVIATIONS(缩略词)}{6}{section.4}
-\contentsline {section}{\numberline {5}翻译反思}{11}{section.5}
