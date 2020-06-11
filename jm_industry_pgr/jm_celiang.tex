@@ -1,0 +1,59 @@
+\documentclass[a4paper, UTF8, 12pt]{article}
+
+\usepackage{ctex}
+\usepackage{abstract}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,   % false, ,链接黑色, 外有红框
+    linkcolor=black, % 目录颜色, 脚注颜色
+    filecolor=blue, % 链接本地文件的链接颜色
+    urlcolor=cyan, % 网页链接颜色
+    anchorcolor=blue,
+    citecolor=green    % 参考文献颜色
+}
+\bibliographystyle{plainnat}
+
+\begin{document}
+\title{\Huge 精密工程测量课程报告}
+\author{\Large 
+        1931991 任家平 \\[12pt]
+        同济大学 \\[12pt]
+        测绘与地理信息学院}
+\date{2020-06-11}
+\maketitle
+\thispagestyle{empty}
+
+\renewcommand\abstractname{\Large\textbf{摘要}}
+\newpage
+\begin{abstract}
+
+    在智慧树平台观看了整个精密工程测量的视频课程后, 对变形监测技术比较感兴趣, 因此对变形监测技术进行了一定的调研, 在本次作业报告中, 对工程变形监测的时代发展背景, 技术发展和研究内容进行了介绍.
+
+\end{abstract}
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\include{chapter/chap01}
+\include{chapter/chap02}
+\include{chapter/chap03}
+
+\newpage
+\nocite{*}
+\bibliography{ref}
+\addcontentsline{toc}{section}{参考文献}
+
+\end{document}
