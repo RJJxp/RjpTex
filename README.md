@@ -11,3 +11,19 @@
 还需努力加油!!!
 
 2333
+
+
+
+---
+
+时间 20210425 22:32
+
+现在这个仓库完全可以用来复习
+
+记录一下适合用于复习的project
+
+-  `UrbanPlanning` : RJP标准报告, 初级版
+-  `jm_industry_pgr` : 比较成熟的标准报告, 高级版
+-  `E2Ch_Class/week11` : hypersetup, geometry, **multirow** 
+-  `E2Ch_Class/week6_2` : **longtable** 
+-  `industry_report` : RJP标准报告, 最终版, 数学公式, 有插图表等
