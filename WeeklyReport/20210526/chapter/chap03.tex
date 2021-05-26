@@ -1,0 +1,103 @@
+\section{Learning a Transferable Change Rule from a Recurrent Neural Network for Land Cover Change Detection}
+
+\paragraph*{摘要:
+    \textcolor[RGB]{17, 205, 29}{作者认为自己是第一位将RNN深度学习模型应用在变化检测, 开山之作?}}
+\begin{quotation}
+    \itshape
+    ...
+
+    to the authors’ best knowledge, this is the first time
+that deep learning in recurrent neural networks is exploited for change detection.
+
+    ...
+\end{quotation}
+
+\paragraph*{para01 
+    \textcolor[RGB]{17, 205, 29}{开篇直奔主题, 短短几句介绍完变化检测的重要性, 将其他变化检测方法(非深度学习)进行总结: 基于图像运算的图像代数算法; 先分类后检测变化, 作者尤其指出与其相关的迁移学习算法; 基于特征学习的方法主要用人工设计的特征去检测变化, 同时指出用时序数据比双时相数据变化检测效果好; }}
+\begin{quotation}
+    \itshape
+    \begin{itemize}
+        \item Image algebra: To detect changes directly, image differencing and image ratios are widely used to detect changes between multi-temporal images. Among them, image differencing (subtraction rule) is a robust and efficient method for detecting changes, and Change Vector Analysis (CVA) [8] represents its conceptual extension with an integrated theoretical framework, therein providing good performance.
+        \item Post-classification: Changed objects are acquired from independent classified multi-temporal maps, and land cover changes can be easily identified from the  separately-classified maps. Therefore, numerous classification methods [9,10] have been proposed to improve change detection accuracy. In particular, a novel change-detection-driven transfer learning approach [11] was proposed to update land cover maps via the classification of image time series.
+        \item Feature learning and transformation: In this category, new learned (transformed) or selected features are utilized to distinguish chang-es, especially using a distance metric. Among the change feature learning methods, physically-meaningful features and learned change
+        features both lead to a good performance and have been applied in various domains. As 
+        physically-meaningful features, vegetation indices, forest canopy variables and water indices are often extracted to identify changes in specific ground-object types [12,13]. For learned features and transformations, various features or transformed feature spaces are learned to highlight the change information to detect a changed region more easily than when using the original spectral information of multi-temporal images, such as in Principal Component Analysis (PCA) [14], Multivariate Alteration Detection (MAD) [15], subspace learning [16,17], sparse learning [18] and
+        slow features [19].
+        \item Other advanced methods: Change detection can be formulated as a statistical hypothesis test
+        using physical models [20]. The metric learning method [21] is also an effective method of
+        detecting changes using well-learned distances. In addition, canonical correlation analysis [22,23] and clustering methods [24,25] have been proposed and found to perform well in unsupervised
+        change detection tasks.
+    \end{itemize}
+\end{quotation}
+
+\paragraph*{para02
+    \textcolor[RGB]{17, 205, 29}{作者写的很含蓄, 像是高考英语作文的连词, However, Moreover, In addition. 分别代表作者想表达上述方法的三个不足: 没有同时考虑多波段; 上述方法在迁移性不好; rule-based的方法, 需要人工设置阈值}}
+\begin{quotation}
+    \itshape
+    The above change detection methods all achieve good performances and make various contributions. However, limitations also exist and should be resolved to better detect changes. For multi-spectral images, all available spectral bands should be considered effectively to detect changes. Moreover, the learned change information should be recorded and exploited for sequential time series data with transferability. In addition, an integrated and independent change detection method can be exploited to detect changes more widely and conveniently without the supplementary task of threshold selection or classification at the final decision step.
+\end{quotation}
+
+\paragraph*{para03
+    \textcolor[RGB]{17, 205, 29}{本文针对上述不足, 应该提出什么样的方法或模型进行了描述, 在此过程中, 述了可移植性定义, 相同数目且相似的波段. }}
+\begin{quotation}
+    \itshape
+    To overcome the above limitations, we expect to design an integrated and independent change rule in our method to detect changes with all available spectral information, and the change rule can be transferred to new target multi-temporal images. Briefly, the effective change rule should have a reliable capability for change information representation, and the learned change rule can be transferred to new target images without any extra learning process, which demonstrates its transferability. In addition, in this paper, transferability is restricted to new target multi-temporal images whose spectral distributions are similar (the same number of spectral bands) to those of training multi-temporal images. Recently, some researchers [11] have proposed a change-detection-driven transfer leaning approach for updating land cover maps using classification, which has emphasized the importance of transferability in change detection research. Therefore, it is important to design an integrated change rule for detecting changes directly with transfer capacity, where the transfer capacity relies on a reliable capability in terms of the expression of the change information extraction for sequential time series data. 
+\end{quotation}
+
+\paragraph*{para03
+    \textcolor[RGB]{17, 205, 29}{引入深度学习. RNN与LSTM的简介, 循环神经元使得RNN模型对时间序列之间存在关联挖掘能力较强.}}
+\begin{quotation}
+    \itshape
+    A Recurrent Neural Network (RNN) can be used to achieve the above objectives. RNNs [26] are network models that use recurrent connections between their neural activations at consecutive time steps; such models use hidden layers or memory cells to learn the
+    time-evolving states that model the underlying dynamics of the input sequence for sequential time
+    series data. RNN models have gained significant attention for solving many challenging problems
+    involving sequential time series data, especially Long Short-Term Memory (LSTM) models [27]. In an
+    RNN learning framework, learning an appropriate representation of the sequences is an important step
+    for achieving artificial intelligence. For change detection, it is important to have a reliable capability in terms of the expression of change information extraction for detecting changes. Thus, RNN models represent potential approaches for learning reliable difference information and providing memorability for change detection in sequential time series remote sensing data.
+\end{quotation}
+
+\paragraph*{para04
+    \textcolor[RGB]{17, 205, 29}{本文的意义: LSTM, 双时相多波段数据, 多类地物变化检测, 可移植性}}
+\begin{quotation}
+    \itshape
+    In this paper, we propose a new change detection method named REFEREE (learning a transferable change Rule From a recurrent neural network for change detection). The main idea of the proposed approach is learning an efficient change rule with a reliable capability in terms of the expression of difference information extraction for detecting changes. For the process of learning a reliable change rule, REFEREE provides transferability with a memory function to detect changes in an integrated change detection system. Therefore, REFEREE adapts LSTM models to resolve not only bitemporal change problems, but also multi-class change detection problems (the definition can be found in Section 2). In addition, REFEREE is the first method that exploits the RNN framework to learn a “change rule” for the change detection task on remote sensing images; moreover, a specially-designed LSTM model is tailored to represent the change information, which is not considered in traditional RNN models, such as those in the literature [28,29].
+\end{quotation}
+
+\subsection{Image Preparation}
+Landsat-7(6波段)和EO-1(262个波段)两个多光谱卫星的影像. 对于EO-1, 要从多个波段中选出6个和Landsat相似的波段, 构建多光谱的三个数据集:
+\begin{itemize}
+    \item 泰州, 两张图像, 2000三月和2003年2月多光谱影像
+    \item 昆山, 两张图象, 2000三月和2003年2月多光谱影像
+    \item 盐城, 两张图像, 2006五月和2007年4月多光谱影像
+\end{itemize}
+    
+\subsection{Method}
+\paragraph*{para01
+    \textcolor[RGB]{17, 205, 29}{作者认为的创新点: 端到端, RNN, 可移植性, 多地物变化检测}}
+\begin{quotation}
+    \itshape
+    ...
+
+    we use a recurrent neural network to encode the multi-temporal image input as a fixed-dimensional vector, and the fixed input can be decoded as the output value in the training process. During the training step, the change rule of REFEREE can be learned in context layers with transferability.
+
+    ...
+\end{quotation}
+
+该部分主要介绍提出的模型, 分类两个方面, 模型结构和损失函数构建. 细节部分还需要继续学习才能看明白.
+
+\subsection{Expriments}
+本文对比方法有七个, CVA, PCA, Iteratively-Reweighted Multivariate Alteration Detection(IRMAD), Supervised Slow Feature Analysis (SSFA), Support Vector Machine (SVM), decision tree,  Convolutional Neural Network(CNN). 评价指标有kappa系数, 整体精度, F-score.
+
+实验设置, 样本数目种类, 其他方法(机器学习)的参数设置.
+
+\subsection{Results and Discussion}
+1. 双时相多波段变化检测: 利用多波段
+
+2. 模型迁移能力: 模型跟样本数量也有关.
+
+3. 多类地物变化检测: 地物主要包括城市, 水, 土壤, 农田四大类.
+
+\subsection{小结}
+考虑到本文是2016年的文章, 考虑其创新型 ``迁移性'', ``端到端'', ``RNN变化检测'', 现今看来, 已经不算创新型. 
+
+读完整篇文章, 对模型可移植性有了一定理解. 对于高光谱, 首先光谱特征要相似且光谱数量要相同. 对于论文实验的写法也要注意. 对比方法中, 要有paramet setting这一部分, 用来交代深度学习模型参数和机器学习模型参数. 

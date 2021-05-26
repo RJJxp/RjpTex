@@ -1,0 +1,117 @@
+\section{Deep learning based multi-temporal crop classification}
+本篇论文主要贡献有两点, 一是证明1-D Conv网络分类结果优于LSTM; 二是研究对深度模型中每层网络的图像解译.
+
+\subsection{Introduction}
+\paragraph*{para01
+    \textcolor[RGB]{17, 205, 29}{利用时序遥感影像进行粮食分类的数据基础}}
+\begin{quotation}
+    \itshape
+    Seasonality is one of the most prominent characteristics of vegetation. Multi-temporal remote sensing is an efficient source of time series observations to monitor growing dynamics for vegetation classification (Rogan et al., 2002; Xie et al., 2008). As remotely-sensed time series are being generated at an unprecedented scale and rate from a expanding collection of platforms, a key aspect towards the goal of classification is how to use time series to fully utilize the wealth of seasonal patterns and sequential relationships. As a consequence, there has been an increasing amount of interest in time series representation, which extracts features from time series to retrieve useful information on vegetation growing stages and conditions.
+\end{quotation}
+
+\paragraph*{para02
+    \textcolor[RGB]{17, 205, 29}{主要对传统方法进行概括, 主要使用作物的植被指数, 并结合其物候特征进行作物分类. 且传统方法对时序数据之间的关联性挖掘不够, 但其并未引证文献.}}
+\begin{quotation}
+    \itshape
+    In multi-temporal remote sensing, various methods have been developed to process and analyze vegetation index (VI) time series. Some studies directly used original VI values during different periods of the year as the main input to rule-based classification algorithms like decision trees (Lloyd, 1990; Friedl et al., 1999; Wardlow and Egbert, 2008). The direct use of time series is simple but effective for vegetation types with distinctive temporal characteristics like rice (Xiao et al., 2005, Xiao et al., 2006, Dong et al., 2015, G. Zhang et al., 2015). In these methods, the sequential relationship of multi-temporal observations was not explicitly considered, which might ignore some useful information in time series inputs.
+\end{quotation}
+
+\paragraph*{para03
+    \textcolor[RGB]{17, 205, 29}{利用作物植被指数进行分类的具体方法, 如傅里叶变换, 小波变换, 卡尔曼滤波, 隐士马尔可夫模型等. 虽未直接提到机器学习, 但介绍方法中的线性回归, Sigmoid函数已将机器学习包含在内. 总体讲, 其对文献分析的深度不够, 只是简单的概括总结.}}
+\begin{quotation}
+    \itshape
+    A more common way of processing multi-temporal VI data is to extract temporal features or phenological metrics from the time series. Simple statistics- or threshold-based methods employed global statistics and selected threshold values to calculate metrics such as the maximum VI, time of peak VI, and onset of green-up to characterize VI time series (Reed et al., 1994; Vina et al., 2004; Brown et al., 2010; Walker et al., 2014; Walker et al., 2015), which may improve classification accuracy compared to using original VI values (Simonneaux and Francois, 2003; Simonneaux et al., 2008). More complex temporal feature extractors like pre-defined mathematical equations or models have been widely used for multi-temporal classification and vegetation phenology studies. In these studies, VI time series were represented by a function or a set of functions, for example, Fourier transform (Olsson and Eklundh, 1994, Verhoef et al., 1996, Evans and Geerken, 2006, M. Zhang et al., 2008, Geerken, 2009), wavelet transform (Sakamoto et al., 2005; Sakamoto et al., 2006; Galford et al., 2008), Savitzky-Golay filter (J.Chen et al., 2004, Shao et al., 2016), linear regression (Funk and Budde, 2009), spline fitting (Bradley et al., 2007; Bradley and Mustard, 2008), Hidden Markov Model (Siachalou et al., 2015), Kalman Filter (Vicente Guijalba et al., 2014), manually-defined shapes (Sakamoto et al., 2010;Sakamoto et al., 2011; Sakamoto et al., 2013; Sakamoto et al., 2014), or a combination of function with different forms (Wang et al., 2012). Among the curve-fitting functions, the logistic/sigmoid function proposed by Badhwar (1984) has gained popularity for its robustness and convenience to derive phenological features in characterizing vegetation dynamics and growing cycles (X. Zhang et al., 2003, Fisher et al.,2006, Beck et al., 2006, Fisher and Mustard, 2007, Dannenberg et al.,2015, Xin et al., 2015, Gonsamo and Chen, 2016).
+\end{quotation}
+
+\paragraph*{para04
+    \textcolor[RGB]{17, 205, 29}{作者对传统方法进行三点概概括, 全部针对人工模型设计缺点, 大量依赖人工经验, 过于耗时, 移植性不好等. 和上述论文关联较弱, 甚至不需要上文具体的参考文献也可以得出此三条结论.}}
+\begin{quotation}
+    \itshape
+    \begin{itemize}
+        \item The manual work of model design and feature extraction relies on human experience and domain knowledge. Features from general models may not be adequate for specific tasks compared to features directly learned from data and driven by tasks in an end-to-end fashion.
+        \item Manual feature engineering is also tedious and time-consuming. Human intervention is usually required to deal with changing environmental and weather conditions. It is hard for human knowledge to simultaneously account for the complex factors such as interclass similarity, intra-class variability, atmospheric conditions,
+        and light-scattering mechanisms (Zhu et al., 2017).
+        \item The fixed form of pre-defined models and associated mathematical assumptions limit the flexibility to handle disparate temporal pat-
+        terns. For approaches based on curve-fitting or empirical seasonal patterns, it is difficult to choose a curve function for all the vegetation types particularly in a diverse landscape (Zhong et al., 2011).
+    \end{itemize}
+\end{quotation}
+
+\paragraph*{para05
+    \textcolor[RGB]{17, 205, 29}{根据人工特征设计的缺点引入深度学习}}
+\begin{quotation}
+    \itshape
+    In short, a proper way of temporal feature representation is desired to fully utilize the sequential information in time series, but most existing feature extractors come with limitations in automation and flexibility. An ideal temporal feature extractor could be trainable to automatically adapt for specific tasks while bringing minimal mathematical constraints to handle complex and varying patterns, just as the way experienced human experts learn to interpret and identify vegetation types based on the shape of seasonal VI profiles. The human learning process to perceive and recognize temporal patterns appears quite different from aforementioned traditional methods. Human experts do not simply check values in the series by time steps like some decision-tree-based methods. They neither limit their understanding to a fixed mathematical model nor a group of models. One interesting fact is that even for experts it is almost impossible to clearly list all the rules of pattern identification, making it difficult to develop classification algorithms at the human knowledge level (Clancey, 1983; Ripley, 2007). The active field of deep learning often provides solutions to such tasks and shows great potential in feature representation of remotely sensed time series (Zhu et al., 2017).
+\end{quotation}
+
+\paragraph*{para06
+    \textcolor[RGB]{17, 205, 29}{针对网络较为复杂, 不用设计特征这一点对深度学习进行介绍. }}
+\begin{quotation}
+    \itshape
+    Inspired by the learning processing of human beings, artificial neural networks (ANNs) employ a general structure of connected units to learn feature representation exclusively from data and reduce task specific and explicit-rule-based programming. Deep learning models, or deep ANNs with more than two hidden layers, provide sufficient model complexity to learn feature representations from data in an  end-to-end regime instead of manual feature engineering based on human experience and prior knowledge (LeCun and Bengio, 1995). In recent years, deep learning was considered as a breakthrough technology in machine learning and data mining including the research field of remote sensing. Image classification studies particularly benefit from deep learning due to its flexibility in feature representation, automation by expert-free end-to-end learning, and computational efficiency. With deep learning models features are automatically extracted for given classification tasks without pre-defined feature crafting algorithms by building a part of the deep ANNs as autoencoders (Y. Chen et al., 2014, W. Li et al.,2016, Wan et al., 2017, Mou and Zhu, 2018, Mou et al., 2018a), or feature selectors (Zou et al., 2015).
+\end{quotation}
+
+\paragraph*{para07
+    \textcolor[RGB]{17, 205, 29}{CNN模型介绍. 主要为1D-Conv, 2D-Conv, 3D-Conv的应用和特点.}}
+\begin{quotation}
+    \itshape
+    Convolutional neural network (CNN) is one of the most successful network architecture in deep learning methods. The learning process of CNNs is computational efficient and insensitive to shift in data like image translation, making CNN a leading model to recognize 2D patterns in images (Krizhevsky et al., 2012). In remote sensing studies, 2D CNNs have been widely used to extract spatial features from the dimensions of width and height for object detection and semantic segmentation of high resolution images (X. Chen et al., 2014, Penatti et al., 2015, F. Hu et al., 2015, Kampffmeyer et al., 2016, Sherrah, 2016, Audebert et al., 2018, Maggiori et al., 2017, W. Li et al., 2017, Volpi and Tuia, 2017, Marcos et al., 2018, Marmanis et al., 2018). Another major application of CNNs is hyperspectral image classification, in which CNNs were used to extract spatial-spectral features, through either 1D convolution across the spectral dimension (W. Hu et al., 2015), 2D across the spatial dimensions (Yue et al., 2015; Zhao and Du, 2016; Mou et al., 2018a), or 3D across the spectral and the spatial dimensions simultaneously (Y. Li et al., 2017). Kussul et al. (2017) found that 2D convolution in the spatial domain achieved slightly higher accuracy in crop classification than 1D convolution in the spectral domain. Guidici and Clark (2017) concatenated hyperspectral images from three seasons and applied 1D convolution to the spectral domain for land cover classification. In these studies, convolutional layers in CNNs play a role as feature extractors mostly for the spatial or the spectral domains, but rarely for the temporal domain of remotely sensed time series.
+\end{quotation}
+
+\paragraph*{para08---para09
+    \textcolor[RGB]{17, 205, 29}{对RNN进行介绍, 并着重介绍了近年来的研究现状, 并引证文献说明RNN的变种LSTM模型在挖掘时序特征效果比较好.}}
+\begin{quotation}
+    \itshape
+    Recurrent neural networks (RNN) are another category of ANNs that extend the conventional networks with loops in connections (Connor et al., 1994; Zaremba et al., 2014). RNNs are specialized for sequential data analysis and have recently shown to be successful in several remote sensing applications. Lyu et al. (2018) adopted a RNN to leverage the sequential properties of multispectral data, such as spectral correlations and band-to-band variability across the spectral dimension. Mou and Zhu (2018) used an encoder to produce multi-level convolutional feature maps from shallow to deep, and a RNN as the decoder to recursively collect multi-scale features and aggregate features sequentially into a high-resolution semantic segmentation image. RNNs are capable of representing data in continuous dimensions with sequential dependency, and the most popular use of RNNs is in the temporal domain to extract features from multi-temporal observations.
+
+    Because of their capability of analyzing sequential data, RNNs are often considered as a natural candidate to learn the temporal relationship in image time series and model land cover changing pat-
+    terns (Mou et al., 2018b). Variants of RNNs are usually used for improved learning efficiency, and the most well-known variant is the long short-term memory (LSTM), a special RNN unit that represents tem-
+    poral dependency at various time-spans with gated recurrent connec    tions (Hochreiter and  Schmidhuber, 1997). Lyu et al. (2016) employed
+    a LSTM model to learn a joint spectral-temporal feature representation from a bi-temporal image pair for change detection. Mou et al. (2018b) extended the work by using 2D convolutional layers as spatial feature extractors to provide inputs to LSTM, and reported that by employing temporal dependency, the proposed network achieved better results than traditional change detection algorithms based on simple image differencing or stacking. Rußwurm and Körner (2017) used LSTM to extract dynamic temporal features from a longer image sequence to classify crop types. In their recent study, Rußwurm and Körner (2018) improved the architecture by adding 2D convolutional layers as spatial feature extractors and connecting recurrent cells in a bidirectional
+    manner to reduce temporal biases towards later images. Jia et al.(2017) used LSTM to learn the pattern of land cover transitions and predict land cover at each time step as a sequential output. These studies also compared the classification results by LSTM-based models with other approaches to show the advantage of using LSTM as a temporal feature extractor. For example, Lyu et al. (2016) found that
+    LSTM achieved ~95\% accuracy compared to ~80\% by Support Vector Machine (SVM) and ~70\% by Decision Tree in multiple experiments. Mou et al. (2018b) also conducted a series of experiments, in which the
+    combined use of CNN and LSTM resulted in ~98\% accuracy that was superior to SVM (~95\%) and Decision Tree (~85\%) Rußwurm and Körner (2017) reported 90.6\% accuracy by a multi-temporal LSTM
+    model, which was slightly higher than CNN (89.2\%) and much higher than SVM (40.9\%).
+\end{quotation}
+
+\paragraph*{para10
+    \textcolor[RGB]{17, 205, 29}{首先本文提出的方法是1D-Conv, 实验的对比方法除了LSTM外, 还有经典的机器学习算法. 另外本文的研究内容主要有两个, 一是探究1D-Conv在时序遥感影像作物分类的效果, 二是探究深度学习模型的解释和翻译.}}
+\begin{quotation}
+    \itshape
+    ...
+
+    Classification results of the proposed models were compared with those from some leading machine learning classifiers. 
+
+    ...
+
+    Exploring the feasibility of using CNNs for temporal feature representation in multi-temporal classification. 
+
+    ...
+
+    Visualizing activations of deep neural networks at various temporal scales and interpreting how the deep learning model works.
+    
+\end{quotation}
+
+\subsection{Method and materials}
+本文研究区域为加利福尼亚州的Yolo郡县, GIS数据来自California Department of Water Resources (CDWR). 进行分类的作物有13类, 遥感数据使用的是2014年4月至9月, 37副Landsat 7和8的高光谱影像时间序列. 由于光学影像易受云雾遮挡, 且影像时间间隔较短, 只有8填, 因此对于质量不好的数据, 进行线性内插获取缺失数据. 
+
+关于数据集制作, 作者引证文献, 认为训练验证测试三个数据集数据要相互独立, 且数据集分布要相似. 如果直接标注像素, 不同地物在交界处会强相关, 如果分块过大, 由于各种作物在空间中分布不均匀, 很难做出相似的分块. 因此本文作者使用小块来分割三个数据集.
+
+\subsection{Result}
+实验中, 深度学习模型有 MLP, 1D-Conv, LSTM; 机器学习算法有   XGBoost, 随机森林, 支持向量机. 分类参数为EVI的时序曲线. 分类结果评价指标为OA(Overall Accuracy)和F1, 对于地物的分类评价为混淆矩阵. 
+
+\subsection{Discussion}
+主要为深度学习中间过程翻译, 并非关注点, 未细看. 
+
+\subsection{小结}
+综述部分广而浅, 逻辑性不够强. 
+
+本文重点应该在深度模型的解译, 对EVI时序曲线用一维卷积深度网络进行时序影像的分类只是序章. 在其数据集准备中, 对于空间上如何划分保证三个数据集的独立性的同时又不丧失地物的空间分布特征是值得学习的.
+
+
+
+
+
+
+
+
+
