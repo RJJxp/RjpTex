@@ -24,6 +24,6 @@
 
 -  `UrbanPlanning` : RJP标准报告, 初级版
 -  `jm_industry_pgr` : 比较成熟的标准报告, 高级版
--  `E2Ch_Class/week11` : hypersetup, geometry, **multirow** 
+-  `E2Ch_Class/week11` : hypersetup, hypertarget, hyperlink, geometry, **multirow** 
 -  `E2Ch_Class/week6_2` : **longtable** 
 -  `industry_report` : RJP标准报告, 最终版, 数学公式, 有插图表等

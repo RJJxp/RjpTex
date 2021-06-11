@@ -1,0 +1,31 @@
+本周主要在配置环境做实验, 因此报告内容并不丰满. 主要任务是对超分和影像翻译进行深度学习环境进行配置. 对于超分思路为: 
+
+\begin{enumerate}
+    \item 使用常规超分数据集跑通训练代码 
+    \item 使用自己的数据根据要求制作训练数据集
+\end{enumerate}
+
+其中超分尝试了以下三个模型, 流程还未跑通. 
+
+\begin{itemize}
+    \item \href{https://github.com/LoSealL/VideoSuperResolution}{LoSealL/VideoSuperResolution} 该代码为总结近年来的超分模型.
+    \item \href{https://github.com/hejingwenhejingwen/AdaFM}{hejingwenhejingwen/AdaFM} 2019年提出的超分模型
+    \item \href{https://github.com/sanghyun-son/EDSR-PyTorch}{sanghyun-son/EDSR-PyTorch} 尝试中.
+\end{itemize}
+
+对于影像翻译深度学习模型, 继承已有的代码, 跑通训练流程所遇到问题比超分少.
+
+现在结果: 已经跑通pix2pix模型, 大致了解训练测试参数的调整, 模型更改, 损失函数更改等. 具体细节还需要进一步学习. 整理数据集, 现已有三个数据集, WHU, OPT2SAR, OPT2SAR\_dong. 对于数据集制作(实验角度), 其关键在于不同源影像的配准, 与配准后的自动化裁剪. 另外要注意的一点是sar影像的处理方式, 是像WHU处理为伪彩色影像进行翻译, 还是直接用预处理后的影像进行翻译. 
+
+下周计划:
+\begin{itemize}
+    \item 学习GAN网络基础知识, Generator, Discriminator
+    \item 跑通超分流程
+\end{itemize}
+
+还需要制作超分数据集自动化制作工具
+
+
+
+
+
