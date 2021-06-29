@@ -1,0 +1,99 @@
+\section{超分概念}
+超分辨率(Super Resolution)是计算机视觉的一个经典应用, 是指通过软件或硬件的方法, 从观测到的低分辨率图像重建出相应的高分辨率图像, 在监控设备, 卫星图像遥感, 数字高清, 显微成像, 视频编码通信, 视频复原和医学影像等领域都有重要的应用价值. 
+
+低分辨率图像(LR Image)~$I_{x}$可如式~\ref{eq0101}表示:
+\begin{equation}
+    I_{x}=D(I_{y};\delta)
+    \label{eq0101}
+\end{equation}
+
+其中$D$表示高分辨率影像的退化函数, ~$\delta$是退化过程中涉及到的参数. 若退化模型未知且已知只有低分辨率图像, 此类问题为盲超分辨率, 对问题的建模如~\ref{eq0102}所示:
+\begin{equation}
+    \hat{I_{y}}=F(I_{x};\theta)
+    \label{eq0102}
+\end{equation}
+
+其中,$I_{y}$为高分辨率影像真值, $\hat{I_{y}}$为高分辨率估值, 即超分结果, $F$表示的是超分函数, $\theta$表示超分涉及到的参数.
+
+尽管退化过程未知, 但可通建模来模拟退化函数, 如~\ref{eq0103}所示, 其中$I_{y}\otimes k$表示在高分辨率图像上使用卷积核$k$进行模糊卷积, $\downarrow_{s}$表示下采样, $n_{\zeta}$表示附加高斯噪声.
+
+\begin{equation}
+    D(I_{y};\delta)=(I_{y}\otimes k)\downarrow_{s}+n_{\zeta}, {k, s, \zeta}\subset\delta 
+    \label{eq0103}
+\end{equation}
+
+注意超分是一个不适定问题(ill-posed problem). 适定问题(well-posed problem)和不适定问题(ill-posed problem)都是数学领域的术语, 前者需满足三个条件，若有一个不满足则称为``ill-posed problem'':
+\begin{itemize}
+    \item 解必须存在
+    \item 解必须唯一
+    \item 解能根据初始条件连续变化，不会发生跳变，即解必须稳定
+\end{itemize}
+
+在计算机视觉中, 有很多任务不满足``适定''条件, 通常不满足第二条和第三条. 比如用GAN``伪造''图像的时候, 这个任务就不满足``解的唯一性''. 做图像超分辨率, 或者对图像去雨去雾去模糊等等任务时，这些都没有一个标准答案, 解有无数种. 更重要的是, 这些解都是不稳定的.
+
+\section{超分影像数据集介绍}
+总的来说, 超分影像数据集一般包括高分辨率图像和对应不同缩小倍数的低分辨率图像. 低分辨率图像生成方式不同, 可将数据集分为两大类, 一类是通过\ref{eq0103}产生的模拟数据(synthetic data); 另一类是真实的低分辨率数据(realistic data). 由于两类数据不同源, 在模拟数据中效果很好的模型可能在真实数据的效果大打折扣. 
+
+常用的数据集 DIV2K, BSDS500, T91, Set5, Set14, Urban100, Manga109等, 使用卷积核模糊高分辨率图像后下采样得到对应倍率的低分辨率图像, 此类数据集不适合用于真实单影像超分. 常用的真实单影像超分数据集有 DIV2KRK, RealSR, DRealSR , City100, SR-RAW, TextZoom, SupER, ImagePairs等. 
+
+\begin{description}
+    \item[DIV2KRK] 在DIV2K数据集的基础上, 使用随机模糊卷积核进行卷积下采样, 加入更加复杂的噪声生成低分辨率图像, 本质还是模拟数据集.
+    \item[RealSR, DRealSR] 单反相机不同焦距来模拟低分辨率图像的缩小系数, 在考虑相机镜头畸变的情况下, 需要进行像素级图像匹配配准高分辨率和低分辨率图像.
+    \item[City100] 使用Nikon相机不同焦距来模拟高低分辨率图像生成; 使用iphonx手机在不同距离拍摄模拟高低分辨率图像生成. 图像匹配, 灰度矫正.  
+    \item[SA-RAW] 不同焦距(different optical zoom), 通过欧几里得运动模型进行图像配准, 有传感器参数作为超分辅助参数.
+\end{description}
+
+由于遥感影像本身包含经纬度等定位信息, 因此在影像配准方面具有得天独厚的优势; 但同一时刻同一时刻获取不同分辨率的遥感影像比较困难. 
+
+\section{超分结果评价}
+\subsection{PNSR}
+PSNR(Peak Signal-to-Noise Ratio), 峰值信噪比. 是一个表示信号最大可能功率和影响它的表示精度的破坏性噪声功率的比值的工程术语. 由于许多信号都有非常宽的动态范围, 峰值信噪比常用对数分贝单位来表示, 是一种衡量图像质量的指标. 
+\begin{equation}
+    MSE=\dfrac{1}{mn}\sum_{i=0}^{m-1}\sum_{j=0}^{n-1}[I_{y}(i,j)-\hat{I_{y}}(i,j)]^{2}
+\end{equation}
+
+\begin{equation}
+    PNSR=10\cdot lg(\dfrac{MAX_{I}^2}{MSE})
+    \label{eq0302}
+\end{equation}
+
+PNSR计算公式如\ref{eq0302}所示, $MAX_{I}$表示的是图像像素点最大数值, 如每个像素为8位, 则$MAX_{I}=255$. MSE越小, 则PSNR越大; 所以PSNR越大, 代表着图像质量越好.
+
+PSNR高于40dB说明图像质量极好(即非常接近原始图像), 在30—40dB通常表示图像质量是好的(即失真可以察觉但可以接受), 在20—30dB说明图像质量差; PSNR低于20dB图像不可接受.
+
+\subsection{SSIM}
+传统基于 MSE 的损失不足如PNSR以表达人的视觉系统对图片的直观感受. 例如有时候两张图片只是亮度不同, 但是之间的 MSE loss 相差很大. 而一幅很模糊与另一幅很清晰的图, 它们的 MSE 可能反而相差很小. 提出SSIM的作者认为我们人类衡量两幅图的距离时, 更偏重于两图的结构相似性, 而不是逐像素计算两图的差异. 因此作者提出了基于 structural similarity 的度量, 声称其比 MSE 更能反映人类视觉系统对两幅图相似性的判断.
+
+作者把两幅图 x, y 的相似性按三个维度进行比较：亮度（luminance）l(x,y), 对比度（contrast）c(x,y), 和结构（structure）s(x,y).最终 x 和 y 的相似度为这三者的函数：
+\begin{equation}
+    S(x,y)=f(l(x,y), c(x,y), s(x,y))
+\end{equation}
+其公式设计遵循三个原则:
+\begin{itemize}
+    \item 对称性: $S(x,y)=S(y,x)$
+    \item 有界性: $S(x,y)\leq 1$
+    \item 极值唯一性: $S(x,y)=1$当且仅当$x=y$
+\end{itemize}
+
+\begin{equation}
+    l(x,y)=\frac{2\mu_{x}\mu_{y}+C_{1}}{\mu_{x}^{2}+\mu_{y}^{2}+C_{1}}
+\end{equation}
+
+\begin{equation}
+    c(x,y)=\frac{2\sigma_{x}\sigma_{y}+C_{2}}{\sigma_{x}^{2}+\sigma_{y}^{2}+C_{2}}
+\end{equation}
+
+\begin{equation}
+    s(x,y)=\frac{\sigma_{xy}+C_{3}}{\sigma_{x}\sigma_{y}+C_{3}}
+\end{equation}
+
+\begin{equation}
+    SSIM(x,y)=l(x,y)\cdot c(x,y)\cdot s(x,y)
+\end{equation}
+
+SSIM越接近1, 表示两个图象更加相似.
+
+\section{超分模型介绍}
+放大倍数. 在遥感中的应用
+
+
