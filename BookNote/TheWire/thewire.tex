@@ -1,0 +1,33 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{chapter/envir}
+
+\begin{document}
+
+\begin{center}
+    {\Huge 
+        The Wire }\\[12pt]
+    {\huge 
+        火线经典台词}\\[20pt]
+    
+    \includegraphics[scale=0.5]{figure/cover.jpg} 
+    \\[20pt] 
+
+    {\Large 
+        任家平\\[12pt]
+        2021-06-16}
+\end{center}
+\thispagestyle{empty}
+
+\include{chapter/abstract}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{chapter/chap01}
+\include{chapter/chap02}
+\include{chapter/chap03}
+
+\end{document}
