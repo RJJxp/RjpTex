@@ -1,0 +1,31 @@
+\section{数据集结果数据}
+\begin{frame}{数据集检索流程}
+    出于人工操作的便利, 将数据检索流程分以下四个步骤:
+    \begin{enumerate}
+        \item 通过粗位置和时间质量, 筛选可用哨兵数据
+        \item 据可用哨兵数据时间粗筛选高分数据
+        \item 在上步结果中, 筛选高质量高分数据
+        \item 高分和哨兵数据精细位置交集
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{数据集制作流程}
+    \begin{enumerate}
+        \item 高分影像预处理, 数据融合
+        \item 哨兵影像预处理
+        \item 大块裁剪的哨兵影像与高分影像空间精匹配
+        \item ROI设置, 大块影像对裁剪
+        \item 脚本批量小块裁剪, 哨兵400, 高分2000
+        \item 影像对色彩匹配
+        \item 剔除少量含云雾影像
+        \item 数据集重命名
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{数据集结果}
+    [展示图片]
+
+    数据质量比上次整体大有提高
+    
+    但还是存在一定颜色差异
+\end{frame}

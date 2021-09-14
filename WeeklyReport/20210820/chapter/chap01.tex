@@ -69,7 +69,7 @@
 注意~\ref{eq:0108}中矩阵的维度. $I_{mn}$, $Q_{mn}$, $K_{mn}$, $V_{mn}$, 而转换矩阵维度都为$W_{mm}$, 最后输出$B_{mn}$维度与输入矩阵$I_{mn}$相同. 网络要估计的参数为三个转换矩阵$W$
 
 \subsection{算法思想}
-将输入元素想象成是由一系列的<Key,Value>数据对构成, 此时给定某个元素Query，通过计算Query和各个Key的相似性或者相关性, 得到每个Key对应Value的权重系数, 然后对Value进行加权求和, 即得到了最终的Attention数值. 所以本质上Attention机制是对输入的Value值进行加权求和, 而Query和Key用来计算对应Value的权重系数. 
+\textit{I love you.}将输入元素想象成是由一系列的<Key,Value>数据对构成, 此时给定某个元素Query，通过计算Query和各个Key的相似性或者相关性, 得到每个Key对应Value的权重系数, 然后对Value进行加权求和, 即得到了最终的Attention数值. 所以本质上Attention机制是对输入的Value值进行加权求和, 而Query和Key用来计算对应Value的权重系数. 
 
 除了自注意力机制外, 还有通道维度增加注意力机制. 关键操作为squeeze和excitation, 所以论文将此attention结构命名为SE Block, SE Block显示实现特征通道的互相依赖关系, 获取到每个特征通道的重要程度, 然后用这个重要程度去给每一个特征通道赋予一个权值, 从而让神经网络重点关注某些特征通道, 提升对当前任务有用的特征通道, 并抑制对当前任务用处不大的特征通道. 
 \begin{figure}[!htbp]
