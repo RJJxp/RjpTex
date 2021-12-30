@@ -1,0 +1,41 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{chapter/envir}
+
+\begin{document}
+
+\begin{center}
+    {\Huge 
+        快乐AMS记录}\\[20pt]
+    
+    \includegraphics[height=25em]{pic/cover.jpg} \\[15pt] 
+
+    {\Large 
+        1931991 任家平\\[12pt]
+        同济大学~测绘与地理信息学院\\[12pt]
+        二零二一年八月卅一日}
+\end{center}
+\thispagestyle{empty}
+
+\include{chapter/abstract}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{chapter/chap01}
+\include{chapter/chap02}
+\include{chapter/chap03}
+
+\listoffigures
+\addcontentsline{toc}{section}{插图目录}
+\listoftables
+\addcontentsline{toc}{section}{表格目录}
+\newpage
+\nocite{*}
+
+% \bibliography{ref}
+% \addcontentsline{toc}{section}{参考文献}
+
+\end{document}

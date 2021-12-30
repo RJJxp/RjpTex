@@ -1,0 +1,97 @@
+\documentclass[12pt, utf-8]{beamer}
+% aspectratio=169
+
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{array}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,   % false, ,链接黑色, 外有红框
+    linkcolor=black, % 目录颜色, 脚注颜色
+    filecolor=blue, % 链接本地文件的链接颜色
+    urlcolor=cyan, % 网页链接颜色
+    anchorcolor=blue,
+    citecolor=black    % 参考文献颜色
+}
+
+% \usepackage[backend=biber,autolang=hyphen,style=gb7714-2015,
+% gbtype=true,gbalign=gb7714-2015,
+% doi=false,url=false,isbn=false]{biblatex}
+
+% % 定义配合\footmark命令的\footfullcitetext命令
+% \DeclareCiteCommand{\footfullcitetext}
+%   [\let\thefootnote\relax\mkbibfootnotetext]
+%   {\usebibmacro{prenote}}
+%   {\thefield{labelnumber}%
+%    \addnbspace%
+%    \usedriver
+%      {\DeclareNameAlias{sortname}{default}}
+%      {\thefield{entrytype}}}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
+% \usetheme{Madrid}
+\usetheme{CambridgeUS}
+
+% \usetheme{EastLansing}
+% \usecolortheme{dafault}
+
+% \usetheme{Berlin}
+\setbeamerfont{caption}{size=\tiny}
+
+\title{2021-12-07汇报}
+\author{任家平}
+\institute{同济大学测绘与地理信息学院}
+\date{2021-12-07}
+% \maketitle
+
+% beamer setup
+\setbeamertemplate{bibliography item}[text]
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{目录}
+    \tableofcontents
+\end{frame}
+
+\include{chapter/chap01}
+\include{chapter/chap02}
+
+
+% \begin{frame}{参考文献}
+%     \nocite{*}
+% \end{frame}
+
+% \section{参考文献}
+% \begin{frame}[allowframebreaks]{参考文献}
+% 	%\bibliographystyle{plain}
+% 	% \bibliographystyle{amsalpha}
+% 	%\bibliography{mybeamer} also works
+%     \bibliography{ref}
+%     \nocite{*}
+%     % \addcontentsline{toc}{section}{参考文献}
+% \end{frame}
+
+% \bibliography{ref}
+
+
+
+
+
+
+\end{document}
+
