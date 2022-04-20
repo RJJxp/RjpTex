@@ -1,0 +1,44 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{chapter/envir}
+
+\begin{document}
+
+\begin{center}
+    {\huge 
+        基于哨兵高分遥感影像的超分辨率问题研究}\\[20pt]
+    
+    \includegraphics[scale=0.4]{pic/cover.jpg}  
+
+    {\Large 
+        1931991 任家平\\[12pt]
+        同济大学~测绘与地理信息学院\\[12pt]
+        2022-03-22}
+\end{center}
+\thispagestyle{empty}
+
+\include{chapter/abstract}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{chapter/chap01}
+\include{chapter/chap02}
+\include{chapter/chap03}
+\include{chapter/chap04}
+\include{chapter/chap05}
+\include{chapter/thanks}
+
+\listoffigures
+\addcontentsline{toc}{section}{插图目录}
+\listoftables
+\addcontentsline{toc}{section}{表格目录}
+\newpage
+\nocite{*}
+
+\bibliography{ref}
+\addcontentsline{toc}{section}{参考文献}
+
+\end{document}
