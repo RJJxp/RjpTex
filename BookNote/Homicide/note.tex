@@ -1,0 +1,33 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{chapter/envir}
+
+\begin{document}
+
+\begin{center}
+    {\Huge 
+        凶年}\\[12pt]
+    {\huge 
+        Homicide}\\[20pt]
+    
+    \includegraphics[scale=0.8]{figure/cover.png} 
+    \\[20pt] 
+
+    {\Large 
+        任家平\\[12pt]
+        2022-10-07}
+\end{center}
+\thispagestyle{empty}
+
+\include{chapter/abstract}
+
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{chapter/chap01}
+% \include{chapter/chap02}
+% \include{chapter/chap03}
+
+\end{document}
